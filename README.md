@@ -69,3 +69,19 @@ PROPOSED. See NOVELTY.md. The novelty text is a draft until the Jev claim_check 
 ## License
 
 Code: Apache-2.0 (see LICENSE). Tutorials: CC BY 4.0. Ruled in D-V3-11, 2026-11-04.
+
+## Fan-out
+
+Written fan-out set for v1.0 (2026-11-05), in fanout/. Every
+piece states plainly that there is no OCR and no LLM in the
+shipped project, that every document is synthetic plain text,
+and that the confidence values are route labels, not
+probabilities. Channel outcomes and per-piece publicity grades
+are logged in PUBLICITY.md.
+
+- Blog post: fanout/blog-post.md
+- Tutorial: fanout/tutorial.md
+- Website page copy: fanout/website-page.md
+- LinkedIn post draft (DRAFT NOT POSTED): fanout/linkedin-post.md
+- Paper candidate: fanout/paper-candidate.md
+- Release notes: fanout/release-notes.md
