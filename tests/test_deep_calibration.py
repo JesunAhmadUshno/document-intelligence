@@ -92,10 +92,13 @@ class TestBands(unittest.TestCase):
         self.assertEqual(RESULT["brier"], 0.0658)
         # No band is overconfident on this eval, so ECE equals
         # the overall accuracy minus the mean confidence.
+        # Same rounding boundary: on Python versions where the
+        # mean rounds to 0.8687, accuracy minus mean is 0.1188
+        # while the band formula gives 0.1187. Tolerance, as above.
         self.assertAlmostEqual(
             RESULT["ece"],
             RESULT["overall_accuracy"] - RESULT["mean_confidence"],
-            places=4)
+            places=3)
 
     def test_zero_band_mixes_absences_and_errors(self):
         # The 0.00 band is two opposite things pooled: receipt
