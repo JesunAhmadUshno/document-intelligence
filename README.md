@@ -2,8 +2,8 @@
 
 Applied AI pipelines: OCR plus LLM extraction, per-field confidence, an eval harness, a review queue.
 
-Status: Build DONE (2026-11-05, ROADMAP-V3-BATCH). Learn and Build are built, tested, and measured below. Deep is not started.
-Project: P16. Fleet node: Dell R610. Wave: Wave 6. Learn and Build were run on the Muse VM (CPU), not the Dell R610; see the level READMEs for the named deductions.
+Status: v1.0 SHIPPED (2026-11-05, ROADMAP-V3-BATCH). Learn, Build, and Deep (compressed Deep) are built, tested, and measured below. The rest of the v2 Deep scope is the named v1.1 backlog in ROADMAP.md.
+Project: P16. Fleet node: Dell R610. Wave: Wave 6. All levels were run on the Muse VM (CPU), not the Dell R610; see the level READMEs for the named deductions.
 
 ## Start here
 
@@ -47,6 +47,20 @@ Measured 2026-11-05 with level-2-build/run_build.py on the Muse VM, Python 3.12.
 | QA known failure | Total spend across all documents: answered 11758.50 against a gold 12108.50, because one document renders its total in words and the extractor misses it |
 | Unit tests | 40 passed (19 Build, 21 Learn), plus the scaffold smoke test |
 | Determinism | results_build.json identical across two runs (hash verified) |
+
+## Deep benchmarks
+
+Measured 2026-11-05 with level-3-deep/run_deep.py on the Muse VM, Python 3.12, over the unchanged Build eval (same 32 synthetic documents, 160 fields). No OCR, no LLM, no real documents. See level-3-deep/README.md and level-3-deep/DEEP-SPEC.md for method, the verdict, and the named substitutions.
+
+| Test | Result |
+| --- | --- |
+| Calibration bands (stated confidence: accuracy) | 0.00: 0.8000 (8 of 10), 0.60: 1.0000 (4 of 4), 0.80: 1.0000 (47 of 47), 1.00: 1.0000 (99 of 99) |
+| Expected calibration error | 0.1187 (weighted absolute gap formula in DEEP-SPEC.md); Brier score 0.0658 |
+| Review queue (flag confidence below 0.60) | 10 of 160 fields flagged (burden 0.0625), 10 of 32 documents, both errors captured (2 of 2, capture rate 1.0000) |
+| Learn queue rule (below 0.80) | 14 fields flagged (burden 0.0875), same 2 of 2 errors captured |
+| Verdict | Confidence values are route labels, not trustworthy probabilities: every non-zero band is underconfident, and the 0.00 band pools 8 correct absences with the 2 errors |
+| Unit tests | 52 passed (12 Deep, 19 Build, 21 Learn), plus the scaffold smoke test |
+| Determinism | results_deep.json identical across two runs (hash verified) |
 
 ## Novelty
 
