@@ -39,7 +39,9 @@ import unittest
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "level-3-deep"))
 from calibration import (  # noqa: E402
-    build_items, evaluate, queue_at_threshold,
+    build_items,
+    evaluate,
+    queue_at_threshold,
 )
 
 RESULT = evaluate()

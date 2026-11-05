@@ -25,7 +25,7 @@ from decimal import Decimal
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "level-2-build"))
 from corpus import DOCUMENTS  # noqa: E402
-from eval_build import evaluate, evaluate_qa, gold_answer, _gold_records  # noqa: E402
+from eval_build import _gold_records, evaluate, evaluate_qa, gold_answer  # noqa: E402
 from pipeline import build_records, extract_fields, extract_table  # noqa: E402
 from qa import QUESTIONS, answer_question  # noqa: E402
 
