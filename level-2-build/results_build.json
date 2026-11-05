@@ -1,0 +1,1696 @@
+{
+  "field_summary": {
+    "overall_accuracy": 0.9875,
+    "total_correct": 158,
+    "total_fields": 160
+  },
+  "mean_confidence": 0.8688,
+  "per_field": [
+    {
+      "accuracy": 1.0,
+      "correct": 32,
+      "field": "invoice_number",
+      "total": 32
+    },
+    {
+      "accuracy": 0.9688,
+      "correct": 31,
+      "field": "date",
+      "total": 32
+    },
+    {
+      "accuracy": 1.0,
+      "correct": 32,
+      "field": "vendor",
+      "total": 32
+    },
+    {
+      "accuracy": 0.9688,
+      "correct": 31,
+      "field": "total",
+      "total": 32
+    },
+    {
+      "accuracy": 1.0,
+      "correct": 32,
+      "field": "due_date",
+      "total": 32
+    }
+  ],
+  "per_question": [
+    {
+      "answer": {
+        "doc_ids": [
+          "B01",
+          "B07",
+          "B12",
+          "B20",
+          "B25"
+        ],
+        "value": "2442.50"
+      },
+      "correct": true,
+      "gold": {
+        "doc_ids": [
+          "B01",
+          "B07",
+          "B12",
+          "B20",
+          "B25"
+        ],
+        "value": "2442.50"
+      },
+      "id": "Q01",
+      "params": {
+        "vendor": "Maple Office Supplies"
+      },
+      "type": "total_spend_per_vendor"
+    },
+    {
+      "answer": {
+        "doc_ids": [
+          "B02",
+          "B10",
+          "B21",
+          "B26"
+        ],
+        "value": "916.00"
+      },
+      "correct": true,
+      "gold": {
+        "doc_ids": [
+          "B02",
+          "B10",
+          "B21",
+          "B26"
+        ],
+        "value": "916.00"
+      },
+      "id": "Q02",
+      "params": {
+        "vendor": "Harbour Print Co"
+      },
+      "type": "total_spend_per_vendor"
+    },
+    {
+      "answer": {
+        "doc_ids": [
+          "B03",
+          "B11",
+          "B22",
+          "B27"
+        ],
+        "value": "1312.00"
+      },
+      "correct": true,
+      "gold": {
+        "doc_ids": [
+          "B03",
+          "B11",
+          "B22",
+          "B27"
+        ],
+        "value": "1312.00"
+      },
+      "id": "Q03",
+      "params": {
+        "vendor": "Cedar Catering"
+      },
+      "type": "total_spend_per_vendor"
+    },
+    {
+      "answer": {
+        "doc_ids": [
+          "B08",
+          "B17",
+          "B18",
+          "B30"
+        ],
+        "value": "710.00"
+      },
+      "correct": true,
+      "gold": {
+        "doc_ids": [
+          "B08",
+          "B17",
+          "B18",
+          "B30"
+        ],
+        "value": "710.00"
+      },
+      "id": "Q04",
+      "params": {
+        "vendor": "Willow Packaging"
+      },
+      "type": "total_spend_per_vendor"
+    },
+    {
+      "answer": {
+        "doc_ids": [
+          "B09",
+          "B15",
+          "B24",
+          "B31"
+        ],
+        "value": "2175.00"
+      },
+      "correct": true,
+      "gold": {
+        "doc_ids": [
+          "B09",
+          "B15",
+          "B24",
+          "B31"
+        ],
+        "value": "2175.00"
+      },
+      "id": "Q05",
+      "params": {
+        "vendor": "Aspen Travel"
+      },
+      "type": "total_spend_per_vendor"
+    },
+    {
+      "answer": {
+        "doc_ids": [
+          "B05",
+          "B14",
+          "B19",
+          "B29"
+        ],
+        "value": "1662.00"
+      },
+      "correct": true,
+      "gold": {
+        "doc_ids": [
+          "B05",
+          "B14",
+          "B19",
+          "B29"
+        ],
+        "value": "1662.00"
+      },
+      "id": "Q06",
+      "params": {
+        "vendor": "Northwind Traders"
+      },
+      "type": "total_spend_per_vendor"
+    },
+    {
+      "answer": {
+        "doc_ids": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B09",
+          "B10",
+          "B11",
+          "B12",
+          "B13",
+          "B14",
+          "B15",
+          "B17",
+          "B18",
+          "B19",
+          "B20",
+          "B21",
+          "B22",
+          "B23",
+          "B24",
+          "B25",
+          "B26",
+          "B27",
+          "B28",
+          "B29",
+          "B30",
+          "B31",
+          "B32"
+        ],
+        "value": "11758.50"
+      },
+      "correct": false,
+      "gold": {
+        "doc_ids": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B09",
+          "B10",
+          "B11",
+          "B12",
+          "B13",
+          "B14",
+          "B15",
+          "B16",
+          "B17",
+          "B18",
+          "B19",
+          "B20",
+          "B21",
+          "B22",
+          "B23",
+          "B24",
+          "B25",
+          "B26",
+          "B27",
+          "B28",
+          "B29",
+          "B30",
+          "B31",
+          "B32"
+        ],
+        "value": "12108.50"
+      },
+      "id": "Q07",
+      "params": {},
+      "type": "total_spend_all"
+    },
+    {
+      "answer": {
+        "doc_ids": [
+          "B12"
+        ],
+        "value": {
+          "doc_id": "B12",
+          "total": "1660.00"
+        }
+      },
+      "correct": true,
+      "gold": {
+        "doc_ids": [
+          "B12"
+        ],
+        "value": {
+          "doc_id": "B12",
+          "total": "1660.00"
+        }
+      },
+      "id": "Q08",
+      "params": {},
+      "type": "largest_document"
+    },
+    {
+      "answer": {
+        "doc_ids": [
+          "B01",
+          "B07",
+          "B12",
+          "B20",
+          "B25"
+        ],
+        "value": 5
+      },
+      "correct": true,
+      "gold": {
+        "doc_ids": [
+          "B01",
+          "B07",
+          "B12",
+          "B20",
+          "B25"
+        ],
+        "value": 5
+      },
+      "id": "Q09",
+      "params": {
+        "vendor": "Maple Office Supplies"
+      },
+      "type": "count_by_vendor"
+    },
+    {
+      "answer": {
+        "doc_ids": [
+          "B25",
+          "B26",
+          "B27",
+          "B28",
+          "B29",
+          "B30",
+          "B31",
+          "B32"
+        ],
+        "value": 8
+      },
+      "correct": true,
+      "gold": {
+        "doc_ids": [
+          "B25",
+          "B26",
+          "B27",
+          "B28",
+          "B29",
+          "B30",
+          "B31",
+          "B32"
+        ],
+        "value": 8
+      },
+      "id": "Q10",
+      "params": {
+        "kind": "receipt"
+      },
+      "type": "count_by_kind"
+    },
+    {
+      "answer": {
+        "doc_ids": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B09",
+          "B10",
+          "B11",
+          "B12",
+          "B13",
+          "B14",
+          "B15",
+          "B16"
+        ],
+        "value": 16
+      },
+      "correct": true,
+      "gold": {
+        "doc_ids": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B09",
+          "B10",
+          "B11",
+          "B12",
+          "B13",
+          "B14",
+          "B15",
+          "B16"
+        ],
+        "value": 16
+      },
+      "id": "Q11",
+      "params": {
+        "kind": "invoice"
+      },
+      "type": "count_by_kind"
+    },
+    {
+      "answer": {
+        "doc_ids": [
+          "B11"
+        ],
+        "value": [
+          {
+            "item": "lunch platters",
+            "line_total": "456.00",
+            "quantity": 12,
+            "unit_price": "38.00"
+          },
+          {
+            "item": "desserts",
+            "line_total": "156.00",
+            "quantity": 24,
+            "unit_price": "6.50"
+          },
+          {
+            "item": "drinks",
+            "line_total": "90.00",
+            "quantity": 30,
+            "unit_price": "3.00"
+          }
+        ]
+      },
+      "correct": true,
+      "gold": {
+        "doc_ids": [
+          "B11"
+        ],
+        "value": [
+          {
+            "item": "lunch platters",
+            "line_total": "456.00",
+            "quantity": 12,
+            "unit_price": "38.00"
+          },
+          {
+            "item": "desserts",
+            "line_total": "156.00",
+            "quantity": 24,
+            "unit_price": "6.50"
+          },
+          {
+            "item": "drinks",
+            "line_total": "90.00",
+            "quantity": 30,
+            "unit_price": "3.00"
+          }
+        ]
+      },
+      "id": "Q12",
+      "params": {
+        "invoice_number": "INV-2011"
+      },
+      "type": "line_items_for_invoice"
+    },
+    {
+      "answer": {
+        "doc_ids": [
+          "B01"
+        ],
+        "value": [
+          {
+            "item": "notebooks",
+            "line_total": "125.00",
+            "quantity": 10,
+            "unit_price": "12.50"
+          },
+          {
+            "item": "pens",
+            "line_total": "50.00",
+            "quantity": 20,
+            "unit_price": "2.50"
+          },
+          {
+            "item": "folders",
+            "line_total": "40.00",
+            "quantity": 5,
+            "unit_price": "8.00"
+          }
+        ]
+      },
+      "correct": true,
+      "gold": {
+        "doc_ids": [
+          "B01"
+        ],
+        "value": [
+          {
+            "item": "notebooks",
+            "line_total": "125.00",
+            "quantity": 10,
+            "unit_price": "12.50"
+          },
+          {
+            "item": "pens",
+            "line_total": "50.00",
+            "quantity": 20,
+            "unit_price": "2.50"
+          },
+          {
+            "item": "folders",
+            "line_total": "40.00",
+            "quantity": 5,
+            "unit_price": "8.00"
+          }
+        ]
+      },
+      "id": "Q13",
+      "params": {
+        "invoice_number": "INV-2001"
+      },
+      "type": "line_items_for_invoice"
+    },
+    {
+      "answer": {
+        "doc_ids": [
+          "B09"
+        ],
+        "value": "Aspen Travel"
+      },
+      "correct": true,
+      "gold": {
+        "doc_ids": [
+          "B09"
+        ],
+        "value": "Aspen Travel"
+      },
+      "id": "Q14",
+      "params": {
+        "invoice_number": "INV-2009"
+      },
+      "type": "vendor_of_invoice"
+    },
+    {
+      "answer": {
+        "doc_ids": [
+          "B06",
+          "B09",
+          "B12"
+        ],
+        "value": [
+          "B06",
+          "B09",
+          "B12"
+        ]
+      },
+      "correct": true,
+      "gold": {
+        "doc_ids": [
+          "B06",
+          "B09",
+          "B12"
+        ],
+        "value": [
+          "B06",
+          "B09",
+          "B12"
+        ]
+      },
+      "id": "Q15",
+      "params": {
+        "amount": "1000.00"
+      },
+      "type": "documents_over_amount"
+    },
+    {
+      "answer": {
+        "doc_ids": [
+          "B17",
+          "B18",
+          "B19",
+          "B20",
+          "B21",
+          "B22",
+          "B23",
+          "B24"
+        ],
+        "value": "1524.00"
+      },
+      "correct": true,
+      "gold": {
+        "doc_ids": [
+          "B17",
+          "B18",
+          "B19",
+          "B20",
+          "B21",
+          "B22",
+          "B23",
+          "B24"
+        ],
+        "value": "1524.00"
+      },
+      "id": "Q16",
+      "params": {
+        "kind": "form"
+      },
+      "type": "total_spend_for_kind"
+    }
+  ],
+  "qa_summary": {
+    "accuracy": 0.9375,
+    "correct": 15,
+    "questions": 16
+  },
+  "records": [
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 1.0,
+        "invoice_number": 1.0,
+        "total": 1.0,
+        "vendor": 1.0
+      },
+      "doc_id": "B01",
+      "fields": {
+        "date": "2026-09-01",
+        "due_date": "2026-10-01",
+        "invoice_number": "INV-2001",
+        "total": "215.00",
+        "vendor": "Maple Office Supplies"
+      },
+      "kind": "invoice",
+      "line_items": [
+        {
+          "item": "notebooks",
+          "line_total": "125.00",
+          "quantity": 10,
+          "unit_price": "12.50"
+        },
+        {
+          "item": "pens",
+          "line_total": "50.00",
+          "quantity": 20,
+          "unit_price": "2.50"
+        },
+        {
+          "item": "folders",
+          "line_total": "40.00",
+          "quantity": 5,
+          "unit_price": "8.00"
+        }
+      ],
+      "variant": "A"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 0.8,
+        "invoice_number": 0.8,
+        "total": 0.8,
+        "vendor": 0.8
+      },
+      "doc_id": "B02",
+      "fields": {
+        "date": "2026-09-03",
+        "due_date": "2026-10-03",
+        "invoice_number": "INV-2002",
+        "total": "280.00",
+        "vendor": "Harbour Print Co"
+      },
+      "kind": "invoice",
+      "line_items": [
+        {
+          "item": "posters",
+          "line_total": "210.00",
+          "quantity": 50,
+          "unit_price": "4.20"
+        },
+        {
+          "item": "flyers",
+          "line_total": "70.00",
+          "quantity": 200,
+          "unit_price": "0.35"
+        }
+      ],
+      "variant": "B"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 1.0,
+        "invoice_number": 1.0,
+        "total": 1.0,
+        "vendor": 1.0
+      },
+      "doc_id": "B03",
+      "fields": {
+        "date": "2026-09-05",
+        "due_date": "2026-10-05",
+        "invoice_number": "INV-2003",
+        "total": "385.00",
+        "vendor": "Cedar Catering"
+      },
+      "kind": "invoice",
+      "line_items": [
+        {
+          "item": "sandwiches",
+          "line_total": "285.00",
+          "quantity": 30,
+          "unit_price": "9.50"
+        },
+        {
+          "item": "coffee urns",
+          "line_total": "100.00",
+          "quantity": 4,
+          "unit_price": "25.00"
+        }
+      ],
+      "variant": "A"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 0.8,
+        "invoice_number": 0.8,
+        "total": 0.8,
+        "vendor": 0.8
+      },
+      "doc_id": "B04",
+      "fields": {
+        "date": "2026-09-07",
+        "due_date": "2026-10-07",
+        "invoice_number": "9101",
+        "total": "600.00",
+        "vendor": "Elm Bookkeeping"
+      },
+      "kind": "invoice",
+      "line_items": [
+        {
+          "item": "bookkeeping hours",
+          "line_total": "600.00",
+          "quantity": 8,
+          "unit_price": "75.00"
+        }
+      ],
+      "variant": "B"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 1.0,
+        "invoice_number": 1.0,
+        "total": 1.0,
+        "vendor": 1.0
+      },
+      "doc_id": "B05",
+      "fields": {
+        "date": "2026-09-09",
+        "due_date": "2026-10-09",
+        "invoice_number": "INV-2005",
+        "total": "340.00",
+        "vendor": "Northwind Traders"
+      },
+      "kind": "invoice",
+      "line_items": [
+        {
+          "item": "storage boxes",
+          "line_total": "250.00",
+          "quantity": 40,
+          "unit_price": "6.25"
+        },
+        {
+          "item": "tape rolls",
+          "line_total": "42.00",
+          "quantity": 12,
+          "unit_price": "3.50"
+        },
+        {
+          "item": "labels",
+          "line_total": "48.00",
+          "quantity": 10,
+          "unit_price": "4.80"
+        }
+      ],
+      "variant": "A"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 0.8,
+        "invoice_number": 0.8,
+        "total": 0.8,
+        "vendor": 0.8
+      },
+      "doc_id": "B06",
+      "fields": {
+        "date": "2026-09-11",
+        "due_date": "2026-10-11",
+        "invoice_number": "INV-2006",
+        "total": "1050.00",
+        "vendor": "Birch Web Studio"
+      },
+      "kind": "invoice",
+      "line_items": [
+        {
+          "item": "landing page",
+          "line_total": "900.00",
+          "quantity": 1,
+          "unit_price": "900.00"
+        },
+        {
+          "item": "logo revision",
+          "line_total": "150.00",
+          "quantity": 2,
+          "unit_price": "75.00"
+        }
+      ],
+      "variant": "B"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 1.0,
+        "invoice_number": 1.0,
+        "total": 1.0,
+        "vendor": 1.0
+      },
+      "doc_id": "B07",
+      "fields": {
+        "date": "2026-09-13",
+        "due_date": "2026-10-13",
+        "invoice_number": "INV-2007",
+        "total": "387.00",
+        "vendor": "Maple Office Supplies"
+      },
+      "kind": "invoice",
+      "line_items": [
+        {
+          "item": "printer paper",
+          "line_total": "195.00",
+          "quantity": 20,
+          "unit_price": "9.75"
+        },
+        {
+          "item": "ink cartridges",
+          "line_total": "192.00",
+          "quantity": 6,
+          "unit_price": "32.00"
+        }
+      ],
+      "variant": "A"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 0.8,
+        "invoice_number": 0.8,
+        "total": 0.8,
+        "vendor": 0.8
+      },
+      "doc_id": "B08",
+      "fields": {
+        "date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "invoice_number": "INV-2008",
+        "total": "301.00",
+        "vendor": "Willow Packaging"
+      },
+      "kind": "invoice",
+      "line_items": [
+        {
+          "item": "cartons",
+          "line_total": "185.00",
+          "quantity": 100,
+          "unit_price": "1.85"
+        },
+        {
+          "item": "bubble wrap",
+          "line_total": "116.00",
+          "quantity": 8,
+          "unit_price": "14.50"
+        }
+      ],
+      "variant": "B"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 1.0,
+        "invoice_number": 1.0,
+        "total": 1.0,
+        "vendor": 1.0
+      },
+      "doc_id": "B09",
+      "fields": {
+        "date": "2026-09-17",
+        "due_date": "2026-10-17",
+        "invoice_number": "INV-2009",
+        "total": "1380.00",
+        "vendor": "Aspen Travel"
+      },
+      "kind": "invoice",
+      "line_items": [
+        {
+          "item": "flights",
+          "line_total": "900.00",
+          "quantity": 2,
+          "unit_price": "450.00"
+        },
+        {
+          "item": "hotel nights",
+          "line_total": "480.00",
+          "quantity": 3,
+          "unit_price": "160.00"
+        }
+      ],
+      "variant": "A"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 0.8,
+        "invoice_number": 0.8,
+        "total": 0.8,
+        "vendor": 0.8
+      },
+      "doc_id": "B10",
+      "fields": {
+        "date": "2026-09-19",
+        "due_date": "2026-10-19",
+        "invoice_number": "INV-2010",
+        "total": "450.00",
+        "vendor": "Harbour Print Co"
+      },
+      "kind": "invoice",
+      "line_items": [
+        {
+          "item": "banners",
+          "line_total": "330.00",
+          "quantity": 6,
+          "unit_price": "55.00"
+        },
+        {
+          "item": "stands",
+          "line_total": "120.00",
+          "quantity": 6,
+          "unit_price": "20.00"
+        }
+      ],
+      "variant": "B"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 1.0,
+        "invoice_number": 1.0,
+        "total": 1.0,
+        "vendor": 1.0
+      },
+      "doc_id": "B11",
+      "fields": {
+        "date": "2026-09-21",
+        "due_date": "2026-10-21",
+        "invoice_number": "INV-2011",
+        "total": "702.00",
+        "vendor": "Cedar Catering"
+      },
+      "kind": "invoice",
+      "line_items": [
+        {
+          "item": "lunch platters",
+          "line_total": "456.00",
+          "quantity": 12,
+          "unit_price": "38.00"
+        },
+        {
+          "item": "desserts",
+          "line_total": "156.00",
+          "quantity": 24,
+          "unit_price": "6.50"
+        },
+        {
+          "item": "drinks",
+          "line_total": "90.00",
+          "quantity": 30,
+          "unit_price": "3.00"
+        }
+      ],
+      "variant": "A"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 0.8,
+        "invoice_number": 0.8,
+        "total": 0.8,
+        "vendor": 0.8
+      },
+      "doc_id": "B12",
+      "fields": {
+        "date": "2026-09-23",
+        "due_date": "2026-10-23",
+        "invoice_number": "INV-2012",
+        "total": "1660.00",
+        "vendor": "Maple Office Supplies"
+      },
+      "kind": "invoice",
+      "line_items": [
+        {
+          "item": "desks",
+          "line_total": "1100.00",
+          "quantity": 4,
+          "unit_price": "275.00"
+        },
+        {
+          "item": "chairs",
+          "line_total": "560.00",
+          "quantity": 4,
+          "unit_price": "140.00"
+        }
+      ],
+      "variant": "B"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 1.0,
+        "invoice_number": 1.0,
+        "total": 1.0,
+        "vendor": 1.0
+      },
+      "doc_id": "B13",
+      "fields": {
+        "date": "2026-09-25",
+        "due_date": "2026-10-25",
+        "invoice_number": "INV-2013",
+        "total": "600.00",
+        "vendor": "Elm Bookkeeping"
+      },
+      "kind": "invoice",
+      "line_items": [
+        {
+          "item": "payroll run",
+          "line_total": "350.00",
+          "quantity": 1,
+          "unit_price": "350.00"
+        },
+        {
+          "item": "tax filing",
+          "line_total": "250.00",
+          "quantity": 1,
+          "unit_price": "250.00"
+        }
+      ],
+      "variant": "A"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 0.8,
+        "invoice_number": 0.8,
+        "total": 0.8,
+        "vendor": 0.8
+      },
+      "doc_id": "B14",
+      "fields": {
+        "date": "2026-09-27",
+        "due_date": "2026-10-27",
+        "invoice_number": "INV-2014",
+        "total": "750.00",
+        "vendor": "Northwind Traders"
+      },
+      "kind": "invoice",
+      "line_items": [
+        {
+          "item": "shelving units",
+          "line_total": "600.00",
+          "quantity": 5,
+          "unit_price": "120.00"
+        },
+        {
+          "item": "casters",
+          "line_total": "150.00",
+          "quantity": 20,
+          "unit_price": "7.50"
+        }
+      ],
+      "variant": "B"
+    },
+    {
+      "confidence": {
+        "date": 0.0,
+        "due_date": 1.0,
+        "invoice_number": 1.0,
+        "total": 1.0,
+        "vendor": 1.0
+      },
+      "doc_id": "B15",
+      "fields": {
+        "date": null,
+        "due_date": "2026-11-15",
+        "invoice_number": "INV-2015",
+        "total": "480.00",
+        "vendor": "Aspen Travel"
+      },
+      "kind": "invoice",
+      "line_items": [
+        {
+          "item": "train tickets",
+          "line_total": "340.00",
+          "quantity": 4,
+          "unit_price": "85.00"
+        },
+        {
+          "item": "taxis",
+          "line_total": "140.00",
+          "quantity": 5,
+          "unit_price": "28.00"
+        }
+      ],
+      "variant": "A"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 0.8,
+        "invoice_number": 0.8,
+        "total": 0.0,
+        "vendor": 0.8
+      },
+      "doc_id": "B16",
+      "fields": {
+        "date": "2026-09-29",
+        "due_date": "2026-10-29",
+        "invoice_number": "INV-2016",
+        "total": null,
+        "vendor": "Birch Web Studio"
+      },
+      "kind": "invoice",
+      "line_items": [
+        {
+          "item": "hosting setup",
+          "line_total": "200.00",
+          "quantity": 1,
+          "unit_price": "200.00"
+        },
+        {
+          "item": "maintenance",
+          "line_total": "150.00",
+          "quantity": 3,
+          "unit_price": "50.00"
+        }
+      ],
+      "variant": "B"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 1.0,
+        "invoice_number": 1.0,
+        "total": 1.0,
+        "vendor": 1.0
+      },
+      "doc_id": "B17",
+      "fields": {
+        "date": "2026-10-01",
+        "due_date": "2026-11-01",
+        "invoice_number": "FRM-3017",
+        "total": "146.00",
+        "vendor": "Willow Packaging"
+      },
+      "kind": "form",
+      "line_items": [
+        {
+          "item": "shipping cartons",
+          "line_total": "111.00",
+          "quantity": 60,
+          "unit_price": "1.85"
+        },
+        {
+          "item": "tape",
+          "line_total": "35.00",
+          "quantity": 10,
+          "unit_price": "3.50"
+        }
+      ],
+      "variant": "A"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 1.0,
+        "invoice_number": 0.8,
+        "total": 1.0,
+        "vendor": 0.8
+      },
+      "doc_id": "B18",
+      "fields": {
+        "date": "2026-10-03",
+        "due_date": "2026-11-03",
+        "invoice_number": "FRM-3018",
+        "total": "185.00",
+        "vendor": "Willow Packaging"
+      },
+      "kind": "form",
+      "line_items": [
+        {
+          "item": "mailers",
+          "line_total": "135.00",
+          "quantity": 150,
+          "unit_price": "0.90"
+        },
+        {
+          "item": "seals",
+          "line_total": "50.00",
+          "quantity": 10,
+          "unit_price": "5.00"
+        }
+      ],
+      "variant": "B"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 1.0,
+        "invoice_number": 1.0,
+        "total": 1.0,
+        "vendor": 1.0
+      },
+      "doc_id": "B19",
+      "fields": {
+        "date": "2026-10-05",
+        "due_date": "2026-11-05",
+        "invoice_number": "FRM-3019",
+        "total": "468.00",
+        "vendor": "Northwind Traders"
+      },
+      "kind": "form",
+      "line_items": [
+        {
+          "item": "pallets",
+          "line_total": "360.00",
+          "quantity": 8,
+          "unit_price": "45.00"
+        },
+        {
+          "item": "wrap",
+          "line_total": "108.00",
+          "quantity": 6,
+          "unit_price": "18.00"
+        }
+      ],
+      "variant": "A"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 1.0,
+        "invoice_number": 0.8,
+        "total": 1.0,
+        "vendor": 0.8
+      },
+      "doc_id": "B20",
+      "fields": {
+        "date": "2026-10-07",
+        "due_date": "2026-11-07",
+        "invoice_number": "FRM-3020",
+        "total": "150.00",
+        "vendor": "Maple Office Supplies"
+      },
+      "kind": "form",
+      "line_items": [
+        {
+          "item": "binders",
+          "line_total": "110.00",
+          "quantity": 25,
+          "unit_price": "4.40"
+        },
+        {
+          "item": "dividers",
+          "line_total": "40.00",
+          "quantity": 25,
+          "unit_price": "1.60"
+        }
+      ],
+      "variant": "B"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 1.0,
+        "invoice_number": 1.0,
+        "total": 1.0,
+        "vendor": 1.0
+      },
+      "doc_id": "B21",
+      "fields": {
+        "date": "2026-10-09",
+        "due_date": "2026-11-09",
+        "invoice_number": "FRM-3021",
+        "total": "120.00",
+        "vendor": "Harbour Print Co"
+      },
+      "kind": "form",
+      "line_items": [
+        {
+          "item": "business cards",
+          "line_total": "60.00",
+          "quantity": 500,
+          "unit_price": "0.12"
+        },
+        {
+          "item": "envelopes",
+          "line_total": "60.00",
+          "quantity": 250,
+          "unit_price": "0.24"
+        }
+      ],
+      "variant": "A"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 1.0,
+        "invoice_number": 0.8,
+        "total": 1.0,
+        "vendor": 0.8
+      },
+      "doc_id": "B22",
+      "fields": {
+        "date": "2026-10-11",
+        "due_date": "2026-11-11",
+        "invoice_number": "FRM-3022",
+        "total": "120.00",
+        "vendor": "Cedar Catering"
+      },
+      "kind": "form",
+      "line_items": [
+        {
+          "item": "napkins",
+          "line_total": "30.00",
+          "quantity": 200,
+          "unit_price": "0.15"
+        },
+        {
+          "item": "cups",
+          "line_total": "40.00",
+          "quantity": 200,
+          "unit_price": "0.20"
+        },
+        {
+          "item": "plates",
+          "line_total": "50.00",
+          "quantity": 200,
+          "unit_price": "0.25"
+        }
+      ],
+      "variant": "B"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 1.0,
+        "invoice_number": 1.0,
+        "total": 1.0,
+        "vendor": 1.0
+      },
+      "doc_id": "B23",
+      "fields": {
+        "date": "2026-10-13",
+        "due_date": "2026-11-13",
+        "invoice_number": "FRM-3023",
+        "total": "110.00",
+        "vendor": "Birch Web Studio"
+      },
+      "kind": "form",
+      "line_items": [
+        {
+          "item": "domain renewal",
+          "line_total": "30.00",
+          "quantity": 2,
+          "unit_price": "15.00"
+        },
+        {
+          "item": "ssl certificate",
+          "line_total": "80.00",
+          "quantity": 1,
+          "unit_price": "80.00"
+        }
+      ],
+      "variant": "A"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 1.0,
+        "invoice_number": 0.8,
+        "total": 1.0,
+        "vendor": 0.8
+      },
+      "doc_id": "B24",
+      "fields": {
+        "date": "2026-10-15",
+        "due_date": "2026-11-15",
+        "invoice_number": "FRM-3024",
+        "total": "225.00",
+        "vendor": "Aspen Travel"
+      },
+      "kind": "form",
+      "line_items": [
+        {
+          "item": "airport transfers",
+          "line_total": "130.00",
+          "quantity": 2,
+          "unit_price": "65.00"
+        },
+        {
+          "item": "insurance",
+          "line_total": "95.00",
+          "quantity": 1,
+          "unit_price": "95.00"
+        }
+      ],
+      "variant": "B"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 0.0,
+        "invoice_number": 1.0,
+        "total": 1.0,
+        "vendor": 1.0
+      },
+      "doc_id": "B25",
+      "fields": {
+        "date": "2026-10-17",
+        "due_date": null,
+        "invoice_number": "RCP-4001",
+        "total": "30.50",
+        "vendor": "Maple Office Supplies"
+      },
+      "kind": "receipt",
+      "line_items": [
+        {
+          "item": "sticky notes",
+          "line_total": "19.50",
+          "quantity": 6,
+          "unit_price": "3.25"
+        },
+        {
+          "item": "markers",
+          "line_total": "11.00",
+          "quantity": 4,
+          "unit_price": "2.75"
+        }
+      ],
+      "variant": "A"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 0.0,
+        "invoice_number": 0.8,
+        "total": 0.8,
+        "vendor": 0.6
+      },
+      "doc_id": "B26",
+      "fields": {
+        "date": "2026-10-18",
+        "due_date": null,
+        "invoice_number": "RCP-4002",
+        "total": "66.00",
+        "vendor": "Harbour Print Co"
+      },
+      "kind": "receipt",
+      "line_items": [
+        {
+          "item": "photo prints",
+          "line_total": "30.00",
+          "quantity": 20,
+          "unit_price": "1.50"
+        },
+        {
+          "item": "frames",
+          "line_total": "36.00",
+          "quantity": 3,
+          "unit_price": "12.00"
+        }
+      ],
+      "variant": "B"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 0.0,
+        "invoice_number": 1.0,
+        "total": 1.0,
+        "vendor": 1.0
+      },
+      "doc_id": "B27",
+      "fields": {
+        "date": "2026-10-19",
+        "due_date": null,
+        "invoice_number": "RCP-4003",
+        "total": "105.00",
+        "vendor": "Cedar Catering"
+      },
+      "kind": "receipt",
+      "line_items": [
+        {
+          "item": "pastries",
+          "line_total": "81.00",
+          "quantity": 18,
+          "unit_price": "4.50"
+        },
+        {
+          "item": "juice boxes",
+          "line_total": "24.00",
+          "quantity": 12,
+          "unit_price": "2.00"
+        }
+      ],
+      "variant": "A"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 0.0,
+        "invoice_number": 0.8,
+        "total": 0.8,
+        "vendor": 0.6
+      },
+      "doc_id": "B28",
+      "fields": {
+        "date": "2026-10-20",
+        "due_date": null,
+        "invoice_number": "RCP-4004",
+        "total": "66.00",
+        "vendor": "Elm Bookkeeping"
+      },
+      "kind": "receipt",
+      "line_items": [
+        {
+          "item": "ledger books",
+          "line_total": "66.00",
+          "quantity": 3,
+          "unit_price": "22.00"
+        }
+      ],
+      "variant": "B"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 0.0,
+        "invoice_number": 1.0,
+        "total": 1.0,
+        "vendor": 1.0
+      },
+      "doc_id": "B29",
+      "fields": {
+        "date": "2026-10-21",
+        "due_date": null,
+        "invoice_number": "RCP-4005",
+        "total": "104.00",
+        "vendor": "Northwind Traders"
+      },
+      "kind": "receipt",
+      "line_items": [
+        {
+          "item": "padlocks",
+          "line_total": "64.00",
+          "quantity": 4,
+          "unit_price": "16.00"
+        },
+        {
+          "item": "keys",
+          "line_total": "40.00",
+          "quantity": 8,
+          "unit_price": "5.00"
+        }
+      ],
+      "variant": "A"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 0.0,
+        "invoice_number": 0.8,
+        "total": 0.8,
+        "vendor": 0.6
+      },
+      "doc_id": "B30",
+      "fields": {
+        "date": "2026-10-22",
+        "due_date": null,
+        "invoice_number": "RCP-4006",
+        "total": "78.00",
+        "vendor": "Willow Packaging"
+      },
+      "kind": "receipt",
+      "line_items": [
+        {
+          "item": "boxes small",
+          "line_total": "36.00",
+          "quantity": 30,
+          "unit_price": "1.20"
+        },
+        {
+          "item": "boxes large",
+          "line_total": "42.00",
+          "quantity": 20,
+          "unit_price": "2.10"
+        }
+      ],
+      "variant": "B"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 0.0,
+        "invoice_number": 1.0,
+        "total": 1.0,
+        "vendor": 1.0
+      },
+      "doc_id": "B31",
+      "fields": {
+        "date": "2026-10-23",
+        "due_date": null,
+        "invoice_number": "RCP-4007",
+        "total": "90.00",
+        "vendor": "Aspen Travel"
+      },
+      "kind": "receipt",
+      "line_items": [
+        {
+          "item": "transit passes",
+          "line_total": "90.00",
+          "quantity": 5,
+          "unit_price": "18.00"
+        }
+      ],
+      "variant": "A"
+    },
+    {
+      "confidence": {
+        "date": 1.0,
+        "due_date": 0.0,
+        "invoice_number": 0.8,
+        "total": 0.8,
+        "vendor": 0.6
+      },
+      "doc_id": "B32",
+      "fields": {
+        "date": "2026-10-24",
+        "due_date": null,
+        "invoice_number": "RCP-4008",
+        "total": "115.00",
+        "vendor": "Birch Web Studio"
+      },
+      "kind": "receipt",
+      "line_items": [
+        {
+          "item": "stock photos",
+          "line_total": "70.00",
+          "quantity": 10,
+          "unit_price": "7.00"
+        },
+        {
+          "item": "fonts",
+          "line_total": "45.00",
+          "quantity": 1,
+          "unit_price": "45.00"
+        }
+      ],
+      "variant": "B"
+    }
+  ],
+  "scenario": "32 synthetic plain-text documents (16 invoices, 8 forms, 8 receipts, 2 layout variants per type) in the layout an OCR step would produce; rule-based extraction reusing the Learn extractor plus receipt patterns; table extraction; cross-document QA from extracted records only; no OCR, no LLM, run on the Muse VM not the Dell R610",
+  "table": {
+    "cell_accuracy": 1.0,
+    "cells_correct": 260,
+    "cells_total": 260,
+    "extra_rows": 0,
+    "row_accuracy": 1.0,
+    "rows_correct": 65,
+    "rows_total": 65
+  }
+}
