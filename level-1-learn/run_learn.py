@@ -10,8 +10,8 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from extractor import evaluate  # noqa: E402
 from documents import FIELDS  # noqa: E402
+from extractor import evaluate  # noqa: E402
 
 
 def main():
