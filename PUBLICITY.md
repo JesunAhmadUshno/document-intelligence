@@ -67,3 +67,79 @@ no live Pages claim yet, PyPI publishing is held, and no social
 channel carries this piece by the standing gates; accuracy minus
 5, gap fit minus 5, and clarity minus 5 for summary compression
 of the full pack standard, which lives in the batch files.
+
+## v1.0 fan-out set (2026-11-05)
+
+Written fan-out set prepared in this cycle, in fanout/. Every
+piece states plainly that there is no OCR and no LLM in the
+shipped project, that every document is synthetic plain text,
+and that the confidence values are route labels, not
+probabilities. Every number is sourced from the repo files
+(README.md, DOSSIER.md, the three level READMEs, and the three
+results files). Tutorial commands were verified by running them;
+the full suite (52 tests plus the scaffold smoke test) passes
+and all three results files stayed byte-identical across the
+runners on Python 3.12.
+
+Overall fan-out grade: 9,472 of 10,000 (the mean of the six
+piece grades below, scaled to 10,000: 5,683 of 6,000).
+
+Jev claim_check on the blog main results claim (extracted byte
+exact from fanout/blog-post.md by script): model jev-1.13.0,
+1,340 input tokens, question id supported, noul 0.83, route
+REVIEW (claim_check bands: clear at 0.85 or above, block at
+0.10 or below, review between). Not blocked, so the claim ships
+in its gated form. Spec and results are in the goal
+hidden_files (jev-p16-fanout-claim-spec-2026-11-05.json and
+jev-p16-fanout-claim-results-2026-11-05.json).
+
+| Channel | Piece | Outcome on 2026-11-05 |
+| --- | --- | --- |
+| GitHub release v0.1 | Learn release | Live: https://github.com/JesunAhmadUshno/document-intelligence/releases/tag/v0.1 |
+| GitHub release v0.5 | Build release | Live: https://github.com/JesunAhmadUshno/document-intelligence/releases/tag/v0.5 |
+| GitHub release v1.0 | Learn, Build, compressed Deep release | Live: https://github.com/JesunAhmadUshno/document-intelligence/releases/tag/v1.0 |
+| GitHub Pages | Docs page | Live and built: https://jesunahmadushno.github.io/document-intelligence/ (enabled after the polish pack merge, legacy build from main /docs, build status verified built on 2026-11-05). |
+| Repo (blog) | Blog post draft | fanout/blog-post.md, repo draft. Not posted to any blog platform. |
+| Repo (tutorial) | Tutorial draft | fanout/tutorial.md, repo draft. Every command verified by running it in this cycle. |
+| Repo (website) | Website page copy draft | fanout/website-page.md, copy only. No website was changed by this file. |
+| LinkedIn | Post draft | fanout/linkedin-post.md, DRAFT NOT POSTED. Held: posting follows the standing platform rules; the link is carried as the first-comment line in the draft, per the LinkedIn rule. |
+| Paper | Candidate brief | fanout/paper-candidate.md, a confidence calibration note. Submission is Jesun's tap; nothing submitted, no venue contacted. |
+| Repo (release notes) | Release notes | fanout/release-notes.md, covering v0.1, v0.5, and v1.0 with measured results and release links verified with gh release list. |
+| X | Social post | Held: no post made. The loop never posts to social; drafts only under the standing platform rules. |
+| Facebook | Social post | Held: no post made. Standing Facebook rule applies (no link in body or comments, keyword call to action by DM) and the loop never posts to social. |
+| Instagram | Social post | Held: no post made. Standing Instagram rule applies (link in bio) and the loop never posts to social. |
+| Threads | Social post | Held: awaiting Jesun's tap. Every Threads post needs his one-tap pre-approval, hash-locked on exact text and media. |
+| Video | 3D playbook video | Held: flagship video production runs through the January engine queue. No video produced in this cycle. |
+| Book | Book chapter | Held: chapter drafted from finished projects under the journey publishing plan; no chapter file is claimed in this cycle. |
+
+Per-piece publicity grades, on the 1,000-point rubric (accuracy
+300, research 200, gap fit 200, clarity 150, reach format 150),
+ship line 900:
+
+| Piece | Accuracy /300 | Research /200 | Gap fit /200 | Clarity /150 | Reach /150 | Total /1000 |
+| --- | --- | --- | --- | --- | --- | --- |
+| fanout/blog-post.md | 295 | 185 | 195 | 145 | 140 | 960 |
+| fanout/tutorial.md | 295 | 182 | 195 | 148 | 135 | 955 |
+| fanout/website-page.md | 295 | 175 | 190 | 145 | 140 | 945 |
+| fanout/linkedin-post.md | 290 | 170 | 190 | 145 | 145 | 940 |
+| fanout/paper-candidate.md | 295 | 190 | 195 | 140 | 120 | 940 |
+| fanout/release-notes.md | 298 | 180 | 185 | 145 | 135 | 943 |
+| PUBLICITY.md fan-out section (this section) | 295 | 175 | 190 | 145 | 130 | 935 |
+
+All six fan-out pieces are at or above the 900 ship line. Named
+deductions: accuracy loses 2 to 10 per piece for summary
+compression of the level READMEs (the full method, hand checks,
+and per-document tables live in the level folders, not in the
+fan-out pieces); research loses 10 to 30 per piece because the
+fan-out reports measured repo work and names prior art from
+DOSSIER.md and NOVELTY.md rather than adding new external
+research, and the paper brief names no venue; gap fit loses 5 to
+15 per piece because the synthetic, no OCR and no LLM scope caps
+how far any piece can speak to real document intelligence roles;
+clarity loses 2 to 10 per piece for the repeated scope lines (no
+OCR, no LLM, route labels not probabilities), which are mandatory
+honesty and cost reading flow; reach loses 5 to 30 per piece
+because every social channel is held under the standing gates,
+the paper is an unsubmitted brief, and no live website or blog
+publication exists yet, so reach is draft reach, not published
+reach.
