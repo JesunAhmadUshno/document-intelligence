@@ -7,8 +7,13 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "level-1-learn"))
 from documents import DOCUMENTS, FIELDS  # noqa: E402
 from extractor import (  # noqa: E402
-    evaluate, extract_date, extract_document, extract_due_date,
-    extract_invoice_number, extract_total, extract_vendor,
+    evaluate,
+    extract_date,
+    extract_document,
+    extract_due_date,
+    extract_invoice_number,
+    extract_total,
+    extract_vendor,
 )
 
 BY_ID = {d["id"]: d for d in DOCUMENTS}

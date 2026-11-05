@@ -28,7 +28,6 @@ LEARN = os.path.join(os.path.dirname(HERE), "level-1-learn")
 if LEARN not in sys.path:
     sys.path.insert(0, LEARN)
 import extractor as learn_extractor  # noqa: E402
-
 from corpus import DOCUMENTS  # noqa: E402
 
 FIELDS = ["invoice_number", "date", "vendor", "total", "due_date"]
