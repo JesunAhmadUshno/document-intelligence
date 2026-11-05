@@ -32,7 +32,16 @@ request were style only: 6 initial errors, all import order or
 format (I001), fixed by ruff fix output with no change to behaviour,
 any imported name, or any string value. All three results files
 (results_learn.json, results_build.json, results_deep.json)
-stayed byte-identical across the runners. requirements.txt records
+stayed byte-identical across the runners on Python 3.12. The new
+3.11 matrix leg exposed a real cross-version float boundary in
+the Deep tests: the exact ECE (0.11875) and exact mean confidence
+(0.86875) sit on a 4-place rounding boundary, and Python 3.11
+naive float summation rounds them one way while Python 3.12
+Neumaier summation rounds them the other (0.1187 and 0.8688 are
+the published 3.12 values). Two Deep test assertions were changed
+from exact equality to a 3-place tolerance for those two values
+only; no production code and no published result changed.
+requirements.txt records
 the standard-library-only fact so Dependabot pip has a manifest
 to watch.
 

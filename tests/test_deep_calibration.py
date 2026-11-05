@@ -55,7 +55,11 @@ class TestItems(unittest.TestCase):
         self.assertEqual(RESULT["total_correct"], 158)
         self.assertEqual(RESULT["total_errors"], 2)
         self.assertEqual(RESULT["overall_accuracy"], 0.9875)
-        self.assertEqual(RESULT["mean_confidence"], 0.8688)
+        # Exact mean is 0.86875, on a 4-place rounding boundary:
+        # float summation rounds it to 0.8687 or 0.8688 by Python
+        # version (3.11 naive sum, 3.12 Neumaier sum), so this
+        # assertion uses a tolerance, not exact equality.
+        self.assertAlmostEqual(RESULT["mean_confidence"], 0.8688, places=3)
 
     def test_errors_are_the_two_known_misses(self):
         errors = {(i["doc_id"], i["field"]) for i in ITEMS if not i["correct"]}
@@ -81,7 +85,10 @@ class TestBands(unittest.TestCase):
         self.assertEqual(sum(b["count"] for b in bands.values()), 160)
 
     def test_ece_and_brier_hand_computed(self):
-        self.assertEqual(RESULT["ece"], 0.1187)
+        # Exact ECE is 0.11875, on the same rounding boundary as
+        # the mean confidence: 0.1187 or 0.1188 by Python version.
+        # Tolerance assertion, for the same reason as test_counts.
+        self.assertAlmostEqual(RESULT["ece"], 0.1187, places=3)
         self.assertEqual(RESULT["brier"], 0.0658)
         # No band is overconfident on this eval, so ECE equals
         # the overall accuracy minus the mean confidence.
