@@ -2,8 +2,8 @@
 
 Applied AI pipelines: OCR plus LLM extraction, per-field confidence, an eval harness, a review queue.
 
-Status: SCAFFOLD (Wave 0, ROADMAP-V3-BATCH, 2026-11-04). Scaffold is not built. No results exist yet.
-Project: P16. Fleet node: Dell R610. Wave: Wave 6.
+Status: Learn DONE (2026-11-05, ROADMAP-V3-BATCH). Level 1 is built, tested, and measured below. Build and Deep are not started.
+Project: P16. Fleet node: Dell R610. Wave: Wave 6. Learn was run on the Muse VM (CPU), not the Dell R610; see the level README for the named deduction.
 
 ## Start here
 
@@ -20,9 +20,17 @@ Project: P16. Fleet node: Dell R610. Wave: Wave 6.
 
 ## Benchmarks
 
+Measured 2026-11-05 with level-1-learn/run_learn.py on the Muse VM, Python 3.12. The documents are synthetic plain text: no OCR, no LLM, no real documents.
+
 | Test | Result |
 | --- | --- |
-| NO RESULTS YET | No measurement has run. This table fills only with measured numbers, with method. |
+| Learn documents | 8 synthetic documents (7 invoices, 1 form), 5 fields each, 40 fields total |
+| Fields correct | 38 of 40 (overall accuracy 0.9500) |
+| Per-field accuracy | invoice_number 1.0000, date 0.8750, vendor 1.0000, total 0.8750, due_date 1.0000 |
+| Mean confidence | 0.8800 (stated rule: 1.00 primary label, 0.80 alternate label, 0.60 fallback, 0.00 missing) |
+| Review queue | 5 entries (3 missing, 2 low confidence) |
+| Unit tests | 21 passed, plus the scaffold smoke test |
+| Determinism | results_learn.json identical across two runs (hash verified) |
 
 ## Novelty
 

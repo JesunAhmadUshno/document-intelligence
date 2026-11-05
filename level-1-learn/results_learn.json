@@ -1,0 +1,392 @@
+{
+  "per_document": [
+    {
+      "correct_count": 5,
+      "doc_id": "D01",
+      "field_count": 5,
+      "fields": {
+        "date": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "2026-09-01",
+          "ground_truth": "2026-09-01"
+        },
+        "due_date": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "2026-10-01",
+          "ground_truth": "2026-10-01"
+        },
+        "invoice_number": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "INV-1001",
+          "ground_truth": "INV-1001"
+        },
+        "total": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "1250.00",
+          "ground_truth": "1250.00"
+        },
+        "vendor": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "Maple Office Supplies",
+          "ground_truth": "Maple Office Supplies"
+        }
+      },
+      "kind": "invoice"
+    },
+    {
+      "correct_count": 5,
+      "doc_id": "D02",
+      "field_count": 5,
+      "fields": {
+        "date": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "2026-09-03",
+          "ground_truth": "2026-09-03"
+        },
+        "due_date": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "2026-10-03",
+          "ground_truth": "2026-10-03"
+        },
+        "invoice_number": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "INV-1002",
+          "ground_truth": "INV-1002"
+        },
+        "total": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "240.75",
+          "ground_truth": "240.75"
+        },
+        "vendor": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "Harbour Print Co",
+          "ground_truth": "Harbour Print Co"
+        }
+      },
+      "kind": "invoice"
+    },
+    {
+      "correct_count": 5,
+      "doc_id": "D03",
+      "field_count": 5,
+      "fields": {
+        "date": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "2026-09-15",
+          "ground_truth": "2026-09-15"
+        },
+        "due_date": {
+          "confidence": 0.8,
+          "correct": true,
+          "extracted": "2026-10-15",
+          "ground_truth": "2026-10-15"
+        },
+        "invoice_number": {
+          "confidence": 0.8,
+          "correct": true,
+          "extracted": "8842",
+          "ground_truth": "8842"
+        },
+        "total": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "89.99",
+          "ground_truth": "89.99"
+        },
+        "vendor": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "Cedar Catering",
+          "ground_truth": "Cedar Catering"
+        }
+      },
+      "kind": "invoice"
+    },
+    {
+      "correct_count": 5,
+      "doc_id": "D04",
+      "field_count": 5,
+      "fields": {
+        "date": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "2026-09-20",
+          "ground_truth": "2026-09-20"
+        },
+        "due_date": {
+          "confidence": 0.0,
+          "correct": true,
+          "extracted": null,
+          "ground_truth": null
+        },
+        "invoice_number": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "INV-1004",
+          "ground_truth": "INV-1004"
+        },
+        "total": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "600.00",
+          "ground_truth": "600.00"
+        },
+        "vendor": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "Elm Bookkeeping",
+          "ground_truth": "Elm Bookkeeping"
+        }
+      },
+      "kind": "invoice"
+    },
+    {
+      "correct_count": 5,
+      "doc_id": "D05",
+      "field_count": 5,
+      "fields": {
+        "date": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "2026-09-22",
+          "ground_truth": "2026-09-22"
+        },
+        "due_date": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "2026-10-22",
+          "ground_truth": "2026-10-22"
+        },
+        "invoice_number": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "INV-1005",
+          "ground_truth": "INV-1005"
+        },
+        "total": {
+          "confidence": 0.8,
+          "correct": true,
+          "extracted": "430.50",
+          "ground_truth": "430.50"
+        },
+        "vendor": {
+          "confidence": 0.6,
+          "correct": true,
+          "extracted": "Northwind Traders",
+          "ground_truth": "Northwind Traders"
+        }
+      },
+      "kind": "invoice"
+    },
+    {
+      "correct_count": 5,
+      "doc_id": "D06",
+      "field_count": 5,
+      "fields": {
+        "date": {
+          "confidence": 0.6,
+          "correct": true,
+          "extracted": "2026-08-20",
+          "ground_truth": "2026-08-20"
+        },
+        "due_date": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "2026-09-20",
+          "ground_truth": "2026-09-20"
+        },
+        "invoice_number": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "INV-1006",
+          "ground_truth": "INV-1006"
+        },
+        "total": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "975.25",
+          "ground_truth": "975.25"
+        },
+        "vendor": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "Birch Web Studio",
+          "ground_truth": "Birch Web Studio"
+        }
+      },
+      "kind": "invoice"
+    },
+    {
+      "correct_count": 5,
+      "doc_id": "D07",
+      "field_count": 5,
+      "fields": {
+        "date": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "2026-10-02",
+          "ground_truth": "2026-10-02"
+        },
+        "due_date": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "2026-11-02",
+          "ground_truth": "2026-11-02"
+        },
+        "invoice_number": {
+          "confidence": 0.8,
+          "correct": true,
+          "extracted": "INV-1007",
+          "ground_truth": "INV-1007"
+        },
+        "total": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "312.40",
+          "ground_truth": "312.40"
+        },
+        "vendor": {
+          "confidence": 0.8,
+          "correct": true,
+          "extracted": "Willow Packaging",
+          "ground_truth": "Willow Packaging"
+        }
+      },
+      "kind": "form"
+    },
+    {
+      "correct_count": 3,
+      "doc_id": "D08",
+      "field_count": 5,
+      "fields": {
+        "date": {
+          "confidence": 0.0,
+          "correct": false,
+          "extracted": null,
+          "ground_truth": "2026-10-15"
+        },
+        "due_date": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "2026-11-15",
+          "ground_truth": "2026-11-15"
+        },
+        "invoice_number": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "INV-1008",
+          "ground_truth": "INV-1008"
+        },
+        "total": {
+          "confidence": 0.0,
+          "correct": false,
+          "extracted": null,
+          "ground_truth": "100.00"
+        },
+        "vendor": {
+          "confidence": 1.0,
+          "correct": true,
+          "extracted": "Aspen Travel",
+          "ground_truth": "Aspen Travel"
+        }
+      },
+      "kind": "invoice"
+    }
+  ],
+  "per_field": [
+    {
+      "accuracy": 1.0,
+      "correct": 8,
+      "field": "invoice_number",
+      "total": 8
+    },
+    {
+      "accuracy": 0.875,
+      "correct": 7,
+      "field": "date",
+      "total": 8
+    },
+    {
+      "accuracy": 1.0,
+      "correct": 8,
+      "field": "vendor",
+      "total": 8
+    },
+    {
+      "accuracy": 0.875,
+      "correct": 7,
+      "field": "total",
+      "total": 8
+    },
+    {
+      "accuracy": 1.0,
+      "correct": 8,
+      "field": "due_date",
+      "total": 8
+    }
+  ],
+  "review_queue": [
+    {
+      "confidence": 0.0,
+      "doc_id": "D04",
+      "extracted": null,
+      "field": "due_date",
+      "ground_truth": null,
+      "reason": "missing"
+    },
+    {
+      "confidence": 0.6,
+      "doc_id": "D05",
+      "extracted": "Northwind Traders",
+      "field": "vendor",
+      "ground_truth": "Northwind Traders",
+      "reason": "low confidence"
+    },
+    {
+      "confidence": 0.6,
+      "doc_id": "D06",
+      "extracted": "2026-08-20",
+      "field": "date",
+      "ground_truth": "2026-08-20",
+      "reason": "low confidence"
+    },
+    {
+      "confidence": 0.0,
+      "doc_id": "D08",
+      "extracted": null,
+      "field": "date",
+      "ground_truth": "2026-10-15",
+      "reason": "missing"
+    },
+    {
+      "confidence": 0.0,
+      "doc_id": "D08",
+      "extracted": null,
+      "field": "total",
+      "ground_truth": "100.00",
+      "reason": "missing"
+    }
+  ],
+  "scenario": "8 synthetic plain-text documents, 5 fields each, rule-based extraction, no OCR, no LLM",
+  "summary": {
+    "documents": 8,
+    "fields_per_document": 5,
+    "mean_confidence": 0.88,
+    "overall_accuracy": 0.95,
+    "review_queue_count": 5,
+    "total_correct": 38,
+    "total_fields": 40
+  }
+}
