@@ -11,6 +11,8 @@ Hiring evidence: 4 of 5 (Mistral preferred, FDE roles at Mistral and OpenAI) [co
 document-intelligence: KEEP
 
 Subject: applied AI pipelines. v1 levels carry over: OCR plus LLM extraction from invoices and forms; table extraction and question answering across many documents; Deep adds per-field confidence scores, an eval harness, and a review queue for low-confidence items.
+Shipped scope note (2026-11-07): the section text above is the target scope. What shipped at v1.0 is rule-based extraction over synthetic plain text in OCR layout, with no OCR and no language model; both remain named substitutions in every level and items 3 and 4 of ROADMAP.md.
+
 Fan-out: Book chapter "Paper Into Data". Paper angle: a confidence-scored extraction eval (accuracy per field against confidence band). Course module: P16-document-intelligence.
 
 ## Acceptance criteria (scaffold level)

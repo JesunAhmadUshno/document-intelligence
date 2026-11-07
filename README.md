@@ -1,6 +1,9 @@
 # document-intelligence
 
-Applied AI pipelines: OCR plus LLM extraction, per-field confidence, an eval harness, a review queue.
+Target scope: OCR plus language-model extraction, per-field confidence, an eval harness, a review queue.
+Shipped: rule-based extraction over synthetic plain text in OCR layout, with no OCR and no language model; the target scope is the roadmap, not a claim.
+
+Live dashboard: https://jesunahmadushno.github.io/document-intelligence/ (a live in-browser extractor, QA console, calibration plot and review-queue explorer; a build-time parity check holds the browser port to the committed results).
 
 Status: v1.0 SHIPPED (2026-11-05, ROADMAP-V3-BATCH). Learn, Build, and Deep (compressed Deep) are built, tested, and measured below. The rest of the v2 Deep scope is the named v1.1 backlog in ROADMAP.md.
 Project: P16. Fleet node: Dell R610. Wave: Wave 6. All levels were run on the Muse VM (CPU), not the Dell R610; see the level READMEs for the named deductions.
@@ -61,6 +64,23 @@ Measured 2026-11-05 with level-3-deep/run_deep.py on the Muse VM, Python 3.12, o
 | Verdict | Confidence values are route labels, not trustworthy probabilities: every non-zero band is underconfident, and the 0.00 band pools 8 correct absences with the 2 errors |
 | Unit tests | 52 passed (12 Deep, 19 Build, 21 Learn), plus the scaffold smoke test |
 | Determinism | results_deep.json identical across two runs (hash verified) |
+
+## Rigor additions (v1.0.1)
+
+Added 2026-11-07 after a research review (docs/research-review.md). Same 32 documents and 160 fields; every number below is written by level-3-deep/run_deep.py or level-3-deep/stress.py. With 2 errors in total, all of this is indicative only.
+
+| Test | Result |
+| --- | --- |
+| Wilson 95% intervals on band accuracy | 0.00: 0.4902 to 0.9433, 0.60: 0.5101 to 1.0000, 0.80: 0.9244 to 1.0000, 1.00: 0.9626 to 1.0000 |
+| Wilson 95% interval on error capture (confidence < 0.60) | 2 of 2: 0.3424 to 1.0000, wide because n is 2 |
+| Constant-confidence baseline (in-sample) | confidence 0.9875: ECE 0.0000, Brier 0.0123 |
+| Band-accuracy map baseline (in-sample) | ECE 0.0000, Brier 0.0100, against the stated labels' ECE 0.1187, Brier 0.0658 |
+| Per-kind accuracy | invoice 78/80, form 40/40, receipt 40/40 |
+| Per-variant accuracy | A 79/80 (ECE 0.0500), B 79/80 (ECE 0.1875) |
+| Perturbation stress set (separate experiment) | lowercase_labels 47/160 fields, 65/65 rows; indented_lines 43/160 fields, 65/65 rows; dmy_dates 103/160 fields, 65/65 rows; no_currency_symbol 127/160 fields, 0/65 rows; unperturbed 158/160 |
+| Unit tests | 68 passed (16 rigor additions, 12 Deep, 19 Build, 21 Learn), plus the scaffold smoke test |
+
+Reading: the baselines show most of the Brier score comes from the labels' values, not from bad ranking. The stress set shows the rules are format-bound: lower-cased labels or indented lines drop field accuracy below a third.
 
 ## Novelty
 

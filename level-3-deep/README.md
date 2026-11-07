@@ -256,6 +256,29 @@ Deductions (they sum to 2,550):
   workflow, timing, or reviewer accuracy measured:
   minus 150.
 
+## Rigor additions (v1.0.1, 2026-11-07)
+
+Added after the research review in docs/research-review.md,
+over the same 160 items, with no change to any number above:
+
+- Wilson 95% intervals (key `wilson95`) on every band and
+  per-field accuracy, and on the error capture rate (key
+  `capture_wilson95`). Capture of 2 of 2 has an interval of
+  0.3424 to 1.0: the 1.0000 capture rate is not a reliable
+  rate.
+- Baselines (key `baselines`): a constant confidence equal
+  to the overall accuracy, and the band-accuracy map. Both
+  are fitted in-sample and labelled so. They show how much
+  of the Brier score is label miscalibration.
+- Cuts (key `breakdowns`) by kind, by variant A/B and by
+  layout. Indicative only: each group holds 0 to 2 errors.
+- A perturbation stress set (stress.py, results_stress.json),
+  a separate experiment: four fixed format shifts applied to
+  all 32 documents with labels unchanged.
+
+Run: `python level-3-deep/stress.py`. Tests:
+tests/test_deep_upgrades.py.
+
 ## What remains (v1.1)
 
 The rest of the v2 Deep scope sits in the repo root
