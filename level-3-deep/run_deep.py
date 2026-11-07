@@ -54,6 +54,8 @@ def main():
         "recommended_threshold": result["recommended_threshold"],
         "recommended_queue": result["recommended_queue"],
         "items": result["items"],
+        "baselines": result["baselines"],
+        "breakdowns": result["breakdowns"],
     }
     path = os.path.join(HERE, "results_deep.json")
     with open(path, "w", encoding="utf-8") as f:

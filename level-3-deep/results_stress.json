@@ -1,0 +1,207 @@
+{
+  "baseline": {
+    "overall_accuracy": 0.9875,
+    "per_field": [
+      {
+        "accuracy": 1.0,
+        "correct": 32,
+        "field": "invoice_number",
+        "total": 32
+      },
+      {
+        "accuracy": 0.9688,
+        "correct": 31,
+        "field": "date",
+        "total": 32
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 32,
+        "field": "vendor",
+        "total": 32
+      },
+      {
+        "accuracy": 0.9688,
+        "correct": 31,
+        "field": "total",
+        "total": 32
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 32,
+        "field": "due_date",
+        "total": 32
+      }
+    ],
+    "rows_correct": 65,
+    "rows_total": 65,
+    "total_correct": 158,
+    "total_fields": 160
+  },
+  "perturbations": [
+    {
+      "description": "Field labels lower-cased (Total: becomes total:)",
+      "name": "lowercase_labels",
+      "overall_accuracy": 0.2938,
+      "per_field": [
+        {
+          "accuracy": 0.125,
+          "correct": 4,
+          "field": "invoice_number",
+          "total": 32
+        },
+        {
+          "accuracy": 0.9688,
+          "correct": 31,
+          "field": "date",
+          "total": 32
+        },
+        {
+          "accuracy": 0.125,
+          "correct": 4,
+          "field": "vendor",
+          "total": 32
+        },
+        {
+          "accuracy": 0.0,
+          "correct": 0,
+          "field": "total",
+          "total": 32
+        },
+        {
+          "accuracy": 0.25,
+          "correct": 8,
+          "field": "due_date",
+          "total": 32
+        }
+      ],
+      "rows_correct": 65,
+      "rows_total": 65,
+      "total_correct": 47,
+      "total_fields": 160
+    },
+    {
+      "description": "Every line indented by two spaces",
+      "name": "indented_lines",
+      "overall_accuracy": 0.2687,
+      "per_field": [
+        {
+          "accuracy": 0.0,
+          "correct": 0,
+          "field": "invoice_number",
+          "total": 32
+        },
+        {
+          "accuracy": 0.9688,
+          "correct": 31,
+          "field": "date",
+          "total": 32
+        },
+        {
+          "accuracy": 0.125,
+          "correct": 4,
+          "field": "vendor",
+          "total": 32
+        },
+        {
+          "accuracy": 0.0,
+          "correct": 0,
+          "field": "total",
+          "total": 32
+        },
+        {
+          "accuracy": 0.25,
+          "correct": 8,
+          "field": "due_date",
+          "total": 32
+        }
+      ],
+      "rows_correct": 65,
+      "rows_total": 65,
+      "total_correct": 43,
+      "total_fields": 160
+    },
+    {
+      "description": "ISO dates rewritten as DD/MM/YYYY",
+      "name": "dmy_dates",
+      "overall_accuracy": 0.6438,
+      "per_field": [
+        {
+          "accuracy": 1.0,
+          "correct": 32,
+          "field": "invoice_number",
+          "total": 32
+        },
+        {
+          "accuracy": 0.0,
+          "correct": 0,
+          "field": "date",
+          "total": 32
+        },
+        {
+          "accuracy": 1.0,
+          "correct": 32,
+          "field": "vendor",
+          "total": 32
+        },
+        {
+          "accuracy": 0.9688,
+          "correct": 31,
+          "field": "total",
+          "total": 32
+        },
+        {
+          "accuracy": 0.25,
+          "correct": 8,
+          "field": "due_date",
+          "total": 32
+        }
+      ],
+      "rows_correct": 65,
+      "rows_total": 65,
+      "total_correct": 103,
+      "total_fields": 160
+    },
+    {
+      "description": "Dollar sign removed from every amount",
+      "name": "no_currency_symbol",
+      "overall_accuracy": 0.7937,
+      "per_field": [
+        {
+          "accuracy": 1.0,
+          "correct": 32,
+          "field": "invoice_number",
+          "total": 32
+        },
+        {
+          "accuracy": 0.9688,
+          "correct": 31,
+          "field": "date",
+          "total": 32
+        },
+        {
+          "accuracy": 1.0,
+          "correct": 32,
+          "field": "vendor",
+          "total": 32
+        },
+        {
+          "accuracy": 0.0,
+          "correct": 0,
+          "field": "total",
+          "total": 32
+        },
+        {
+          "accuracy": 1.0,
+          "correct": 32,
+          "field": "due_date",
+          "total": 32
+        }
+      ],
+      "rows_correct": 0,
+      "rows_total": 65,
+      "total_correct": 127,
+      "total_fields": 160
+    }
+  ]
+}

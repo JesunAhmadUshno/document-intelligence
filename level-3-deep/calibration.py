@@ -28,7 +28,16 @@ There is no OCR and no LLM here: the named substitutions
 from Build stand (synthetic plain text in OCR layout,
 rule-based extraction). Only the Python standard library
 is used.
+
+Rigor additions (v1.0.1): a Wilson 95% interval on every
+accuracy and on the error capture rate, two in-sample
+baselines (a constant confidence equal to the overall
+accuracy, and the band-accuracy map), and per-kind,
+per-variant and per-layout cuts. With 2 errors in 160
+fields these are indicative only: the intervals are wide
+on purpose, and that is the point of reporting them.
 """
+import math
 import os
 import sys
 
@@ -40,6 +49,18 @@ from corpus import DOCUMENTS  # noqa: E402
 from pipeline import FIELDS, build_records  # noqa: E402
 
 THRESHOLDS = [0.60, 0.80, 1.00]
+Z95 = 1.959964
+
+
+def wilson_interval(k, n, z=Z95):
+    """Wilson score 95% interval for k successes in n trials."""
+    if n == 0:
+        return [0.0, 1.0]
+    p = k / n
+    denom = 1 + z * z / n
+    centre = (p + z * z / (2 * n)) / denom
+    half = z * math.sqrt(p * (1 - p) / n + z * z / (4 * n * n)) / denom
+    return [round(max(0.0, centre - half), 4), round(min(1.0, centre + half), 4)]
 
 
 def build_items(documents=None, records=None):
@@ -70,6 +91,7 @@ def band_table(items):
         bands.append({
             "confidence": conf, "count": len(sel), "correct": correct,
             "accuracy": round(acc, 4), "gap": round(abs(acc - conf), 4),
+            "wilson95": wilson_interval(correct, len(sel)),
         })
     return bands
 
@@ -103,6 +125,7 @@ def per_field_table(items):
         table.append({
             "field": field, "count": len(sel), "correct": correct,
             "accuracy": round(correct / len(sel), 4), "by_band": by_band,
+            "wilson95": wilson_interval(correct, len(sel)),
         })
     return table
 
@@ -122,12 +145,66 @@ def queue_at_threshold(items, threshold):
         "errors_captured": captured,
         "total_errors": total_errors,
         "error_capture_rate": round(captured / total_errors, 4) if total_errors else 0.0,
+        "capture_wilson95": wilson_interval(captured, total_errors),
         "flagged_correct": len(flagged) - captured,
         "queue": [{"doc_id": i["doc_id"], "field": i["field"],
                    "confidence": i["confidence"],
                    "extracted": i["extracted"], "correct": i["correct"]}
                   for i in flagged],
     }
+
+
+def baselines(items, bands):
+    """ECE and Brier for the stated labels against two in-sample
+    baselines: one constant confidence equal to the overall
+    accuracy, and each item scored by its own band accuracy.
+    Both baselines are fitted on the items they are scored on."""
+    n = len(items)
+    acc = sum(1 for i in items if i["correct"]) / n
+    outcome = [1 if i["correct"] else 0 for i in items]
+    band_acc = {b["confidence"]: b["correct"] / b["count"] for b in bands}
+    mapped = [band_acc[i["confidence"]] for i in items]
+    return {
+        "stated_route_labels": {"ece": expected_calibration_error(items, bands),
+                                "brier": brier_score(items)},
+        "constant_overall_accuracy": {
+            "confidence": round(acc, 4), "ece": 0.0,
+            "brier": round(sum((acc - y) ** 2 for y in outcome) / n, 4)},
+        "band_accuracy_map_in_sample": {
+            "ece": 0.0,
+            "brier": round(sum((c - y) ** 2 for c, y in zip(mapped, outcome)) / n, 4)},
+    }
+
+
+def _group_row(group, sel):
+    correct = sum(1 for i in sel if i["correct"])
+    return {
+        "group": group, "count": len(sel), "correct": correct,
+        "errors": len(sel) - correct,
+        "accuracy": round(correct / len(sel), 4),
+        "wilson95": wilson_interval(correct, len(sel)),
+        "mean_confidence": round(sum(i["confidence"] for i in sel) / len(sel), 4),
+        "ece": expected_calibration_error(sel, band_table(sel)),
+    }
+
+
+def breakdowns(items, documents=None):
+    """Accuracy and ECE per kind, per variant (A/B), and per
+    layout (kind plus variant). Too small to conclude from."""
+    documents = DOCUMENTS if documents is None else documents
+    meta = {d["id"]: (d["kind"], d["variant"]) for d in documents}
+    keys = {
+        "by_kind": lambda i: meta[i["doc_id"]][0],
+        "by_variant": lambda i: meta[i["doc_id"]][1],
+        "by_layout": lambda i: "/".join(meta[i["doc_id"]]),
+    }
+    out = {}
+    for name, key in keys.items():
+        groups = {}
+        for i in items:
+            groups.setdefault(key(i), []).append(i)
+        out[name] = [_group_row(g, sel) for g, sel in groups.items()]
+    return out
 
 
 def evaluate(documents=None):
@@ -151,4 +228,6 @@ def evaluate(documents=None):
             sum(i["confidence"] for i in items) / len(items), 4),
         "total_errors": len(items) - total_correct,
         "total_documents": len({i["doc_id"] for i in items}),
+        "baselines": baselines(items, bands),
+        "breakdowns": breakdowns(items, documents),
     }

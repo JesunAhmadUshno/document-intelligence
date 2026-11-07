@@ -5,30 +5,212 @@
       "confidence": 0.0,
       "correct": 8,
       "count": 10,
-      "gap": 0.8
+      "gap": 0.8,
+      "wilson95": [
+        0.4902,
+        0.9433
+      ]
     },
     {
       "accuracy": 1.0,
       "confidence": 0.6,
       "correct": 4,
       "count": 4,
-      "gap": 0.4
+      "gap": 0.4,
+      "wilson95": [
+        0.5101,
+        1.0
+      ]
     },
     {
       "accuracy": 1.0,
       "confidence": 0.8,
       "correct": 47,
       "count": 47,
-      "gap": 0.2
+      "gap": 0.2,
+      "wilson95": [
+        0.9244,
+        1.0
+      ]
     },
     {
       "accuracy": 1.0,
       "confidence": 1.0,
       "correct": 99,
       "count": 99,
-      "gap": 0.0
+      "gap": 0.0,
+      "wilson95": [
+        0.9626,
+        1.0
+      ]
     }
   ],
+  "baselines": {
+    "band_accuracy_map_in_sample": {
+      "brier": 0.01,
+      "ece": 0.0
+    },
+    "constant_overall_accuracy": {
+      "brier": 0.0123,
+      "confidence": 0.9875,
+      "ece": 0.0
+    },
+    "stated_route_labels": {
+      "brier": 0.0658,
+      "ece": 0.1187
+    }
+  },
+  "breakdowns": {
+    "by_kind": [
+      {
+        "accuracy": 0.975,
+        "correct": 78,
+        "count": 80,
+        "ece": 0.0775,
+        "errors": 2,
+        "group": "invoice",
+        "mean_confidence": 0.8975,
+        "wilson95": [
+          0.9134,
+          0.9931
+        ]
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 40,
+        "count": 40,
+        "ece": 0.04,
+        "errors": 0,
+        "group": "form",
+        "mean_confidence": 0.96,
+        "wilson95": [
+          0.9124,
+          1.0
+        ]
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 40,
+        "count": 40,
+        "ece": 0.28,
+        "errors": 0,
+        "group": "receipt",
+        "mean_confidence": 0.72,
+        "wilson95": [
+          0.9124,
+          1.0
+        ]
+      }
+    ],
+    "by_layout": [
+      {
+        "accuracy": 0.975,
+        "correct": 39,
+        "count": 40,
+        "ece": 0.0,
+        "errors": 1,
+        "group": "invoice/A",
+        "mean_confidence": 0.975,
+        "wilson95": [
+          0.8712,
+          0.9956
+        ]
+      },
+      {
+        "accuracy": 0.975,
+        "correct": 39,
+        "count": 40,
+        "ece": 0.155,
+        "errors": 1,
+        "group": "invoice/B",
+        "mean_confidence": 0.82,
+        "wilson95": [
+          0.8712,
+          0.9956
+        ]
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 20,
+        "count": 20,
+        "ece": 0.0,
+        "errors": 0,
+        "group": "form/A",
+        "mean_confidence": 1.0,
+        "wilson95": [
+          0.8389,
+          1.0
+        ]
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 20,
+        "count": 20,
+        "ece": 0.08,
+        "errors": 0,
+        "group": "form/B",
+        "mean_confidence": 0.92,
+        "wilson95": [
+          0.8389,
+          1.0
+        ]
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 20,
+        "count": 20,
+        "ece": 0.2,
+        "errors": 0,
+        "group": "receipt/A",
+        "mean_confidence": 0.8,
+        "wilson95": [
+          0.8389,
+          1.0
+        ]
+      },
+      {
+        "accuracy": 1.0,
+        "correct": 20,
+        "count": 20,
+        "ece": 0.36,
+        "errors": 0,
+        "group": "receipt/B",
+        "mean_confidence": 0.64,
+        "wilson95": [
+          0.8389,
+          1.0
+        ]
+      }
+    ],
+    "by_variant": [
+      {
+        "accuracy": 0.9875,
+        "correct": 79,
+        "count": 80,
+        "ece": 0.05,
+        "errors": 1,
+        "group": "A",
+        "mean_confidence": 0.9375,
+        "wilson95": [
+          0.9325,
+          0.9978
+        ]
+      },
+      {
+        "accuracy": 0.9875,
+        "correct": 79,
+        "count": 80,
+        "ece": 0.1875,
+        "errors": 1,
+        "group": "B",
+        "mean_confidence": 0.8,
+        "wilson95": [
+          0.9325,
+          0.9978
+        ]
+      }
+    ]
+  },
   "brier": 0.0658,
   "ece": 0.1187,
   "items": [
@@ -1494,7 +1676,11 @@
       ],
       "correct": 32,
       "count": 32,
-      "field": "invoice_number"
+      "field": "invoice_number",
+      "wilson95": [
+        0.8928,
+        1.0
+      ]
     },
     {
       "accuracy": 0.9688,
@@ -1514,7 +1700,11 @@
       ],
       "correct": 31,
       "count": 32,
-      "field": "date"
+      "field": "date",
+      "wilson95": [
+        0.8426,
+        0.9945
+      ]
     },
     {
       "accuracy": 1.0,
@@ -1540,7 +1730,11 @@
       ],
       "correct": 32,
       "count": 32,
-      "field": "vendor"
+      "field": "vendor",
+      "wilson95": [
+        0.8928,
+        1.0
+      ]
     },
     {
       "accuracy": 0.9688,
@@ -1566,7 +1760,11 @@
       ],
       "correct": 31,
       "count": 32,
-      "field": "total"
+      "field": "total",
+      "wilson95": [
+        0.8426,
+        0.9945
+      ]
     },
     {
       "accuracy": 1.0,
@@ -1592,10 +1790,18 @@
       ],
       "correct": 32,
       "count": 32,
-      "field": "due_date"
+      "field": "due_date",
+      "wilson95": [
+        0.8928,
+        1.0
+      ]
     }
   ],
   "recommended_queue": {
+    "capture_wilson95": [
+      0.3424,
+      1.0
+    ],
     "document_ids": [
       "B15",
       "B16",
@@ -1694,6 +1900,10 @@
   "scenario": "Per-field confidence calibration over the unchanged Build eval: 32 synthetic plain-text documents, 160 fields; bands are the four stated confidence values (0.00, 0.60, 0.80, 1.00); ECE by the stated weighted absolute gap formula; review queue measured by a threshold sweep; no OCR, no LLM, run on the Muse VM not the Dell R610",
   "threshold_sweep": [
     {
+      "capture_wilson95": [
+        0.3424,
+        1.0
+      ],
       "document_ids": [
         "B15",
         "B16",
@@ -1789,6 +1999,10 @@
       "total_errors": 2
     },
     {
+      "capture_wilson95": [
+        0.3424,
+        1.0
+      ],
       "document_ids": [
         "B15",
         "B16",
@@ -1912,6 +2126,10 @@
       "total_errors": 2
     },
     {
+      "capture_wilson95": [
+        0.3424,
+        1.0
+      ],
       "document_ids": [
         "B02",
         "B04",
