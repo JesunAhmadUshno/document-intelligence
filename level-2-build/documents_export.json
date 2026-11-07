@@ -1,0 +1,972 @@
+{
+  "build": [
+    {
+      "ground_truth": {
+        "date": "2026-09-01",
+        "due_date": "2026-10-01",
+        "invoice_number": "INV-2001",
+        "total": "215.00",
+        "vendor": "Maple Office Supplies"
+      },
+      "id": "B01",
+      "kind": "invoice",
+      "table_ground_truth": [
+        {
+          "item": "notebooks",
+          "line_total": "125.00",
+          "quantity": 10,
+          "unit_price": "12.50"
+        },
+        {
+          "item": "pens",
+          "line_total": "50.00",
+          "quantity": 20,
+          "unit_price": "2.50"
+        },
+        {
+          "item": "folders",
+          "line_total": "40.00",
+          "quantity": 5,
+          "unit_price": "8.00"
+        }
+      ],
+      "text": "INVOICE\nVendor: Maple Office Supplies\nInvoice Number: INV-2001\nDate: 2026-09-01\nItem | Qty | Unit Price | Line Total\nnotebooks | 10 | $12.50 | $125.00\npens | 20 | $2.50 | $50.00\nfolders | 5 | $8.00 | $40.00\nTotal: $215.00\nDue Date: 2026-10-01\n",
+      "variant": "A"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-03",
+        "due_date": "2026-10-03",
+        "invoice_number": "INV-2002",
+        "total": "280.00",
+        "vendor": "Harbour Print Co"
+      },
+      "id": "B02",
+      "kind": "invoice",
+      "table_ground_truth": [
+        {
+          "item": "posters",
+          "line_total": "210.00",
+          "quantity": 50,
+          "unit_price": "4.20"
+        },
+        {
+          "item": "flyers",
+          "line_total": "70.00",
+          "quantity": 200,
+          "unit_price": "0.35"
+        }
+      ],
+      "text": "INVOICE\nSupplier: Harbour Print Co\nInvoice No: INV-2002\nDate: 2026-09-03\nItem; Qty; Unit Price; Amount\nposters; 50; $4.20; $210.00\nflyers; 200; $0.35; $70.00\nAmount Due: $280.00\nDue: 2026-10-03\n",
+      "variant": "B"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-05",
+        "due_date": "2026-10-05",
+        "invoice_number": "INV-2003",
+        "total": "385.00",
+        "vendor": "Cedar Catering"
+      },
+      "id": "B03",
+      "kind": "invoice",
+      "table_ground_truth": [
+        {
+          "item": "sandwiches",
+          "line_total": "285.00",
+          "quantity": 30,
+          "unit_price": "9.50"
+        },
+        {
+          "item": "coffee urns",
+          "line_total": "100.00",
+          "quantity": 4,
+          "unit_price": "25.00"
+        }
+      ],
+      "text": "INVOICE\nVendor: Cedar Catering\nInvoice Number: INV-2003\nDate: 2026-09-05\nItem | Qty | Unit Price | Line Total\nsandwiches | 30 | $9.50 | $285.00\ncoffee urns | 4 | $25.00 | $100.00\nTotal: $385.00\nDue Date: 2026-10-05\n",
+      "variant": "A"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-07",
+        "due_date": "2026-10-07",
+        "invoice_number": "9101",
+        "total": "600.00",
+        "vendor": "Elm Bookkeeping"
+      },
+      "id": "B04",
+      "kind": "invoice",
+      "table_ground_truth": [
+        {
+          "item": "bookkeeping hours",
+          "line_total": "600.00",
+          "quantity": 8,
+          "unit_price": "75.00"
+        }
+      ],
+      "text": "INVOICE\nSupplier: Elm Bookkeeping\nInvoice No: 9101\nDate: 2026-09-07\nItem; Qty; Unit Price; Amount\nbookkeeping hours; 8; $75.00; $600.00\nAmount Due: $600.00\nDue: 2026-10-07\n",
+      "variant": "B"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-09",
+        "due_date": "2026-10-09",
+        "invoice_number": "INV-2005",
+        "total": "340.00",
+        "vendor": "Northwind Traders"
+      },
+      "id": "B05",
+      "kind": "invoice",
+      "table_ground_truth": [
+        {
+          "item": "storage boxes",
+          "line_total": "250.00",
+          "quantity": 40,
+          "unit_price": "6.25"
+        },
+        {
+          "item": "tape rolls",
+          "line_total": "42.00",
+          "quantity": 12,
+          "unit_price": "3.50"
+        },
+        {
+          "item": "labels",
+          "line_total": "48.00",
+          "quantity": 10,
+          "unit_price": "4.80"
+        }
+      ],
+      "text": "INVOICE\nVendor: Northwind Traders\nInvoice Number: INV-2005\nDate: 2026-09-09\nItem | Qty | Unit Price | Line Total\nstorage boxes | 40 | $6.25 | $250.00\ntape rolls | 12 | $3.50 | $42.00\nlabels | 10 | $4.80 | $48.00\nTotal: $340.00\nDue Date: 2026-10-09\n",
+      "variant": "A"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-11",
+        "due_date": "2026-10-11",
+        "invoice_number": "INV-2006",
+        "total": "1050.00",
+        "vendor": "Birch Web Studio"
+      },
+      "id": "B06",
+      "kind": "invoice",
+      "table_ground_truth": [
+        {
+          "item": "landing page",
+          "line_total": "900.00",
+          "quantity": 1,
+          "unit_price": "900.00"
+        },
+        {
+          "item": "logo revision",
+          "line_total": "150.00",
+          "quantity": 2,
+          "unit_price": "75.00"
+        }
+      ],
+      "text": "INVOICE\nSupplier: Birch Web Studio\nInvoice No: INV-2006\nDate: 2026-09-11\nItem; Qty; Unit Price; Amount\nlanding page; 1; $900.00; $900.00\nlogo revision; 2; $75.00; $150.00\nAmount Due: $1050.00\nDue: 2026-10-11\n",
+      "variant": "B"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-13",
+        "due_date": "2026-10-13",
+        "invoice_number": "INV-2007",
+        "total": "387.00",
+        "vendor": "Maple Office Supplies"
+      },
+      "id": "B07",
+      "kind": "invoice",
+      "table_ground_truth": [
+        {
+          "item": "printer paper",
+          "line_total": "195.00",
+          "quantity": 20,
+          "unit_price": "9.75"
+        },
+        {
+          "item": "ink cartridges",
+          "line_total": "192.00",
+          "quantity": 6,
+          "unit_price": "32.00"
+        }
+      ],
+      "text": "INVOICE\nVendor: Maple Office Supplies\nInvoice Number: INV-2007\nDate: 2026-09-13\nItem | Qty | Unit Price | Line Total\nprinter paper | 20 | $9.75 | $195.00\nink cartridges | 6 | $32.00 | $192.00\nTotal: $387.00\nDue Date: 2026-10-13\n",
+      "variant": "A"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "invoice_number": "INV-2008",
+        "total": "301.00",
+        "vendor": "Willow Packaging"
+      },
+      "id": "B08",
+      "kind": "invoice",
+      "table_ground_truth": [
+        {
+          "item": "cartons",
+          "line_total": "185.00",
+          "quantity": 100,
+          "unit_price": "1.85"
+        },
+        {
+          "item": "bubble wrap",
+          "line_total": "116.00",
+          "quantity": 8,
+          "unit_price": "14.50"
+        }
+      ],
+      "text": "INVOICE\nSupplier: Willow Packaging\nInvoice No: INV-2008\nDate: 2026-09-15\nItem; Qty; Unit Price; Amount\ncartons; 100; $1.85; $185.00\nbubble wrap; 8; $14.50; $116.00\nAmount Due: $301.00\nDue: 2026-10-15\n",
+      "variant": "B"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-17",
+        "due_date": "2026-10-17",
+        "invoice_number": "INV-2009",
+        "total": "1380.00",
+        "vendor": "Aspen Travel"
+      },
+      "id": "B09",
+      "kind": "invoice",
+      "table_ground_truth": [
+        {
+          "item": "flights",
+          "line_total": "900.00",
+          "quantity": 2,
+          "unit_price": "450.00"
+        },
+        {
+          "item": "hotel nights",
+          "line_total": "480.00",
+          "quantity": 3,
+          "unit_price": "160.00"
+        }
+      ],
+      "text": "INVOICE\nVendor: Aspen Travel\nInvoice Number: INV-2009\nDate: 2026-09-17\nItem | Qty | Unit Price | Line Total\nflights | 2 | $450.00 | $900.00\nhotel nights | 3 | $160.00 | $480.00\nTotal: $1380.00\nDue Date: 2026-10-17\n",
+      "variant": "A"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-19",
+        "due_date": "2026-10-19",
+        "invoice_number": "INV-2010",
+        "total": "450.00",
+        "vendor": "Harbour Print Co"
+      },
+      "id": "B10",
+      "kind": "invoice",
+      "table_ground_truth": [
+        {
+          "item": "banners",
+          "line_total": "330.00",
+          "quantity": 6,
+          "unit_price": "55.00"
+        },
+        {
+          "item": "stands",
+          "line_total": "120.00",
+          "quantity": 6,
+          "unit_price": "20.00"
+        }
+      ],
+      "text": "INVOICE\nSupplier: Harbour Print Co\nInvoice No: INV-2010\nDate: 2026-09-19\nItem; Qty; Unit Price; Amount\nbanners; 6; $55.00; $330.00\nstands; 6; $20.00; $120.00\nAmount Due: $450.00\nDue: 2026-10-19\n",
+      "variant": "B"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-21",
+        "due_date": "2026-10-21",
+        "invoice_number": "INV-2011",
+        "total": "702.00",
+        "vendor": "Cedar Catering"
+      },
+      "id": "B11",
+      "kind": "invoice",
+      "table_ground_truth": [
+        {
+          "item": "lunch platters",
+          "line_total": "456.00",
+          "quantity": 12,
+          "unit_price": "38.00"
+        },
+        {
+          "item": "desserts",
+          "line_total": "156.00",
+          "quantity": 24,
+          "unit_price": "6.50"
+        },
+        {
+          "item": "drinks",
+          "line_total": "90.00",
+          "quantity": 30,
+          "unit_price": "3.00"
+        }
+      ],
+      "text": "INVOICE\nVendor: Cedar Catering\nInvoice Number: INV-2011\nDate: 2026-09-21\nItem | Qty | Unit Price | Line Total\nlunch platters | 12 | $38.00 | $456.00\ndesserts | 24 | $6.50 | $156.00\ndrinks | 30 | $3.00 | $90.00\nTotal: $702.00\nDue Date: 2026-10-21\n",
+      "variant": "A"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-23",
+        "due_date": "2026-10-23",
+        "invoice_number": "INV-2012",
+        "total": "1660.00",
+        "vendor": "Maple Office Supplies"
+      },
+      "id": "B12",
+      "kind": "invoice",
+      "table_ground_truth": [
+        {
+          "item": "desks",
+          "line_total": "1100.00",
+          "quantity": 4,
+          "unit_price": "275.00"
+        },
+        {
+          "item": "chairs",
+          "line_total": "560.00",
+          "quantity": 4,
+          "unit_price": "140.00"
+        }
+      ],
+      "text": "INVOICE\nSupplier: Maple Office Supplies\nInvoice No: INV-2012\nDate: 2026-09-23\nItem; Qty; Unit Price; Amount\ndesks; 4; $275.00; $1100.00\nchairs; 4; $140.00; $560.00\nAmount Due: $1660.00\nDue: 2026-10-23\n",
+      "variant": "B"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-25",
+        "due_date": "2026-10-25",
+        "invoice_number": "INV-2013",
+        "total": "600.00",
+        "vendor": "Elm Bookkeeping"
+      },
+      "id": "B13",
+      "kind": "invoice",
+      "table_ground_truth": [
+        {
+          "item": "payroll run",
+          "line_total": "350.00",
+          "quantity": 1,
+          "unit_price": "350.00"
+        },
+        {
+          "item": "tax filing",
+          "line_total": "250.00",
+          "quantity": 1,
+          "unit_price": "250.00"
+        }
+      ],
+      "text": "INVOICE\nVendor: Elm Bookkeeping\nInvoice Number: INV-2013\nDate: 2026-09-25\nItem | Qty | Unit Price | Line Total\npayroll run | 1 | $350.00 | $350.00\ntax filing | 1 | $250.00 | $250.00\nTotal: $600.00\nDue Date: 2026-10-25\n",
+      "variant": "A"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-27",
+        "due_date": "2026-10-27",
+        "invoice_number": "INV-2014",
+        "total": "750.00",
+        "vendor": "Northwind Traders"
+      },
+      "id": "B14",
+      "kind": "invoice",
+      "table_ground_truth": [
+        {
+          "item": "shelving units",
+          "line_total": "600.00",
+          "quantity": 5,
+          "unit_price": "120.00"
+        },
+        {
+          "item": "casters",
+          "line_total": "150.00",
+          "quantity": 20,
+          "unit_price": "7.50"
+        }
+      ],
+      "text": "INVOICE\nSupplier: Northwind Traders\nInvoice No: INV-2014\nDate: 2026-09-27\nItem; Qty; Unit Price; Amount\nshelving units; 5; $120.00; $600.00\ncasters; 20; $7.50; $150.00\nAmount Due: $750.00\nDue: 2026-10-27\n",
+      "variant": "B"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-15",
+        "due_date": "2026-11-15",
+        "invoice_number": "INV-2015",
+        "total": "480.00",
+        "vendor": "Aspen Travel"
+      },
+      "id": "B15",
+      "kind": "invoice",
+      "table_ground_truth": [
+        {
+          "item": "train tickets",
+          "line_total": "340.00",
+          "quantity": 4,
+          "unit_price": "85.00"
+        },
+        {
+          "item": "taxis",
+          "line_total": "140.00",
+          "quantity": 5,
+          "unit_price": "28.00"
+        }
+      ],
+      "text": "INVOICE\nVendor: Aspen Travel\nInvoice Number: INV-2015\nDate: 15 October 2026\nItem | Qty | Unit Price | Line Total\ntrain tickets | 4 | $85.00 | $340.00\ntaxis | 5 | $28.00 | $140.00\nTotal: $480.00\nDue Date: 2026-11-15\n",
+      "variant": "A"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-29",
+        "due_date": "2026-10-29",
+        "invoice_number": "INV-2016",
+        "total": "350.00",
+        "vendor": "Birch Web Studio"
+      },
+      "id": "B16",
+      "kind": "invoice",
+      "table_ground_truth": [
+        {
+          "item": "hosting setup",
+          "line_total": "200.00",
+          "quantity": 1,
+          "unit_price": "200.00"
+        },
+        {
+          "item": "maintenance",
+          "line_total": "150.00",
+          "quantity": 3,
+          "unit_price": "50.00"
+        }
+      ],
+      "text": "INVOICE\nSupplier: Birch Web Studio\nInvoice No: INV-2016\nDate: 2026-09-29\nItem; Qty; Unit Price; Amount\nhosting setup; 1; $200.00; $200.00\nmaintenance; 3; $50.00; $150.00\nAmount Due: three hundred fifty dollars\nDue: 2026-10-29\n",
+      "variant": "B"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-01",
+        "due_date": "2026-11-01",
+        "invoice_number": "FRM-3017",
+        "total": "146.00",
+        "vendor": "Willow Packaging"
+      },
+      "id": "B17",
+      "kind": "form",
+      "table_ground_truth": [
+        {
+          "item": "shipping cartons",
+          "line_total": "111.00",
+          "quantity": 60,
+          "unit_price": "1.85"
+        },
+        {
+          "item": "tape",
+          "line_total": "35.00",
+          "quantity": 10,
+          "unit_price": "3.50"
+        }
+      ],
+      "text": "PURCHASE FORM\nVendor: Willow Packaging\nInvoice Number: FRM-3017\nDate: 2026-10-01\nItem | Qty | Unit Price | Line Total\nshipping cartons | 60 | $1.85 | $111.00\ntape | 10 | $3.50 | $35.00\nTotal: $146.00\nDue Date: 2026-11-01\n",
+      "variant": "A"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-03",
+        "due_date": "2026-11-03",
+        "invoice_number": "FRM-3018",
+        "total": "185.00",
+        "vendor": "Willow Packaging"
+      },
+      "id": "B18",
+      "kind": "form",
+      "table_ground_truth": [
+        {
+          "item": "mailers",
+          "line_total": "135.00",
+          "quantity": 150,
+          "unit_price": "0.90"
+        },
+        {
+          "item": "seals",
+          "line_total": "50.00",
+          "quantity": 10,
+          "unit_price": "5.00"
+        }
+      ],
+      "text": "PURCHASE FORM\nSupplier: Willow Packaging\nInvoice # FRM-3018\nDate: 2026-10-03\nItem; Qty; Unit Price; Amount\nmailers; 150; $0.90; $135.00\nseals; 10; $5.00; $50.00\nTotal: $185.00\nDue Date: 2026-11-03\n",
+      "variant": "B"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-05",
+        "due_date": "2026-11-05",
+        "invoice_number": "FRM-3019",
+        "total": "468.00",
+        "vendor": "Northwind Traders"
+      },
+      "id": "B19",
+      "kind": "form",
+      "table_ground_truth": [
+        {
+          "item": "pallets",
+          "line_total": "360.00",
+          "quantity": 8,
+          "unit_price": "45.00"
+        },
+        {
+          "item": "wrap",
+          "line_total": "108.00",
+          "quantity": 6,
+          "unit_price": "18.00"
+        }
+      ],
+      "text": "PURCHASE FORM\nVendor: Northwind Traders\nInvoice Number: FRM-3019\nDate: 2026-10-05\nItem | Qty | Unit Price | Line Total\npallets | 8 | $45.00 | $360.00\nwrap | 6 | $18.00 | $108.00\nTotal: $468.00\nDue Date: 2026-11-05\n",
+      "variant": "A"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-07",
+        "due_date": "2026-11-07",
+        "invoice_number": "FRM-3020",
+        "total": "150.00",
+        "vendor": "Maple Office Supplies"
+      },
+      "id": "B20",
+      "kind": "form",
+      "table_ground_truth": [
+        {
+          "item": "binders",
+          "line_total": "110.00",
+          "quantity": 25,
+          "unit_price": "4.40"
+        },
+        {
+          "item": "dividers",
+          "line_total": "40.00",
+          "quantity": 25,
+          "unit_price": "1.60"
+        }
+      ],
+      "text": "PURCHASE FORM\nSupplier: Maple Office Supplies\nInvoice # FRM-3020\nDate: 2026-10-07\nItem; Qty; Unit Price; Amount\nbinders; 25; $4.40; $110.00\ndividers; 25; $1.60; $40.00\nTotal: $150.00\nDue Date: 2026-11-07\n",
+      "variant": "B"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-09",
+        "due_date": "2026-11-09",
+        "invoice_number": "FRM-3021",
+        "total": "120.00",
+        "vendor": "Harbour Print Co"
+      },
+      "id": "B21",
+      "kind": "form",
+      "table_ground_truth": [
+        {
+          "item": "business cards",
+          "line_total": "60.00",
+          "quantity": 500,
+          "unit_price": "0.12"
+        },
+        {
+          "item": "envelopes",
+          "line_total": "60.00",
+          "quantity": 250,
+          "unit_price": "0.24"
+        }
+      ],
+      "text": "PURCHASE FORM\nVendor: Harbour Print Co\nInvoice Number: FRM-3021\nDate: 2026-10-09\nItem | Qty | Unit Price | Line Total\nbusiness cards | 500 | $0.12 | $60.00\nenvelopes | 250 | $0.24 | $60.00\nTotal: $120.00\nDue Date: 2026-11-09\n",
+      "variant": "A"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-11",
+        "due_date": "2026-11-11",
+        "invoice_number": "FRM-3022",
+        "total": "120.00",
+        "vendor": "Cedar Catering"
+      },
+      "id": "B22",
+      "kind": "form",
+      "table_ground_truth": [
+        {
+          "item": "napkins",
+          "line_total": "30.00",
+          "quantity": 200,
+          "unit_price": "0.15"
+        },
+        {
+          "item": "cups",
+          "line_total": "40.00",
+          "quantity": 200,
+          "unit_price": "0.20"
+        },
+        {
+          "item": "plates",
+          "line_total": "50.00",
+          "quantity": 200,
+          "unit_price": "0.25"
+        }
+      ],
+      "text": "PURCHASE FORM\nSupplier: Cedar Catering\nInvoice # FRM-3022\nDate: 2026-10-11\nItem; Qty; Unit Price; Amount\nnapkins; 200; $0.15; $30.00\ncups; 200; $0.20; $40.00\nplates; 200; $0.25; $50.00\nTotal: $120.00\nDue Date: 2026-11-11\n",
+      "variant": "B"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-13",
+        "due_date": "2026-11-13",
+        "invoice_number": "FRM-3023",
+        "total": "110.00",
+        "vendor": "Birch Web Studio"
+      },
+      "id": "B23",
+      "kind": "form",
+      "table_ground_truth": [
+        {
+          "item": "domain renewal",
+          "line_total": "30.00",
+          "quantity": 2,
+          "unit_price": "15.00"
+        },
+        {
+          "item": "ssl certificate",
+          "line_total": "80.00",
+          "quantity": 1,
+          "unit_price": "80.00"
+        }
+      ],
+      "text": "PURCHASE FORM\nVendor: Birch Web Studio\nInvoice Number: FRM-3023\nDate: 2026-10-13\nItem | Qty | Unit Price | Line Total\ndomain renewal | 2 | $15.00 | $30.00\nssl certificate | 1 | $80.00 | $80.00\nTotal: $110.00\nDue Date: 2026-11-13\n",
+      "variant": "A"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-15",
+        "due_date": "2026-11-15",
+        "invoice_number": "FRM-3024",
+        "total": "225.00",
+        "vendor": "Aspen Travel"
+      },
+      "id": "B24",
+      "kind": "form",
+      "table_ground_truth": [
+        {
+          "item": "airport transfers",
+          "line_total": "130.00",
+          "quantity": 2,
+          "unit_price": "65.00"
+        },
+        {
+          "item": "insurance",
+          "line_total": "95.00",
+          "quantity": 1,
+          "unit_price": "95.00"
+        }
+      ],
+      "text": "PURCHASE FORM\nSupplier: Aspen Travel\nInvoice # FRM-3024\nDate: 2026-10-15\nItem; Qty; Unit Price; Amount\nairport transfers; 2; $65.00; $130.00\ninsurance; 1; $95.00; $95.00\nTotal: $225.00\nDue Date: 2026-11-15\n",
+      "variant": "B"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-17",
+        "due_date": null,
+        "invoice_number": "RCP-4001",
+        "total": "30.50",
+        "vendor": "Maple Office Supplies"
+      },
+      "id": "B25",
+      "kind": "receipt",
+      "table_ground_truth": [
+        {
+          "item": "sticky notes",
+          "line_total": "19.50",
+          "quantity": 6,
+          "unit_price": "3.25"
+        },
+        {
+          "item": "markers",
+          "line_total": "11.00",
+          "quantity": 4,
+          "unit_price": "2.75"
+        }
+      ],
+      "text": "RECEIPT\nStore: Maple Office Supplies\nReceipt Number: RCP-4001\nDate: 2026-10-17\nItem | Qty | Unit Price | Line Total\nsticky notes | 6 | $3.25 | $19.50\nmarkers | 4 | $2.75 | $11.00\nTotal: $30.50\n",
+      "variant": "A"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-18",
+        "due_date": null,
+        "invoice_number": "RCP-4002",
+        "total": "66.00",
+        "vendor": "Harbour Print Co"
+      },
+      "id": "B26",
+      "kind": "receipt",
+      "table_ground_truth": [
+        {
+          "item": "photo prints",
+          "line_total": "30.00",
+          "quantity": 20,
+          "unit_price": "1.50"
+        },
+        {
+          "item": "frames",
+          "line_total": "36.00",
+          "quantity": 3,
+          "unit_price": "12.00"
+        }
+      ],
+      "text": "Harbour Print Co\nReceipt No: RCP-4002\nDate: 2026-10-18\nItem; Qty; Unit Price; Amount\nphoto prints; 20; $1.50; $30.00\nframes; 3; $12.00; $36.00\nPaid: $66.00\n",
+      "variant": "B"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-19",
+        "due_date": null,
+        "invoice_number": "RCP-4003",
+        "total": "105.00",
+        "vendor": "Cedar Catering"
+      },
+      "id": "B27",
+      "kind": "receipt",
+      "table_ground_truth": [
+        {
+          "item": "pastries",
+          "line_total": "81.00",
+          "quantity": 18,
+          "unit_price": "4.50"
+        },
+        {
+          "item": "juice boxes",
+          "line_total": "24.00",
+          "quantity": 12,
+          "unit_price": "2.00"
+        }
+      ],
+      "text": "RECEIPT\nStore: Cedar Catering\nReceipt Number: RCP-4003\nDate: 2026-10-19\nItem | Qty | Unit Price | Line Total\npastries | 18 | $4.50 | $81.00\njuice boxes | 12 | $2.00 | $24.00\nTotal: $105.00\n",
+      "variant": "A"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-20",
+        "due_date": null,
+        "invoice_number": "RCP-4004",
+        "total": "66.00",
+        "vendor": "Elm Bookkeeping"
+      },
+      "id": "B28",
+      "kind": "receipt",
+      "table_ground_truth": [
+        {
+          "item": "ledger books",
+          "line_total": "66.00",
+          "quantity": 3,
+          "unit_price": "22.00"
+        }
+      ],
+      "text": "Elm Bookkeeping\nReceipt No: RCP-4004\nDate: 2026-10-20\nItem; Qty; Unit Price; Amount\nledger books; 3; $22.00; $66.00\nPaid: $66.00\n",
+      "variant": "B"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-21",
+        "due_date": null,
+        "invoice_number": "RCP-4005",
+        "total": "104.00",
+        "vendor": "Northwind Traders"
+      },
+      "id": "B29",
+      "kind": "receipt",
+      "table_ground_truth": [
+        {
+          "item": "padlocks",
+          "line_total": "64.00",
+          "quantity": 4,
+          "unit_price": "16.00"
+        },
+        {
+          "item": "keys",
+          "line_total": "40.00",
+          "quantity": 8,
+          "unit_price": "5.00"
+        }
+      ],
+      "text": "RECEIPT\nStore: Northwind Traders\nReceipt Number: RCP-4005\nDate: 2026-10-21\nItem | Qty | Unit Price | Line Total\npadlocks | 4 | $16.00 | $64.00\nkeys | 8 | $5.00 | $40.00\nTotal: $104.00\n",
+      "variant": "A"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-22",
+        "due_date": null,
+        "invoice_number": "RCP-4006",
+        "total": "78.00",
+        "vendor": "Willow Packaging"
+      },
+      "id": "B30",
+      "kind": "receipt",
+      "table_ground_truth": [
+        {
+          "item": "boxes small",
+          "line_total": "36.00",
+          "quantity": 30,
+          "unit_price": "1.20"
+        },
+        {
+          "item": "boxes large",
+          "line_total": "42.00",
+          "quantity": 20,
+          "unit_price": "2.10"
+        }
+      ],
+      "text": "Willow Packaging\nReceipt No: RCP-4006\nDate: 2026-10-22\nItem; Qty; Unit Price; Amount\nboxes small; 30; $1.20; $36.00\nboxes large; 20; $2.10; $42.00\nPaid: $78.00\n",
+      "variant": "B"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-23",
+        "due_date": null,
+        "invoice_number": "RCP-4007",
+        "total": "90.00",
+        "vendor": "Aspen Travel"
+      },
+      "id": "B31",
+      "kind": "receipt",
+      "table_ground_truth": [
+        {
+          "item": "transit passes",
+          "line_total": "90.00",
+          "quantity": 5,
+          "unit_price": "18.00"
+        }
+      ],
+      "text": "RECEIPT\nStore: Aspen Travel\nReceipt Number: RCP-4007\nDate: 2026-10-23\nItem | Qty | Unit Price | Line Total\ntransit passes | 5 | $18.00 | $90.00\nTotal: $90.00\n",
+      "variant": "A"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-24",
+        "due_date": null,
+        "invoice_number": "RCP-4008",
+        "total": "115.00",
+        "vendor": "Birch Web Studio"
+      },
+      "id": "B32",
+      "kind": "receipt",
+      "table_ground_truth": [
+        {
+          "item": "stock photos",
+          "line_total": "70.00",
+          "quantity": 10,
+          "unit_price": "7.00"
+        },
+        {
+          "item": "fonts",
+          "line_total": "45.00",
+          "quantity": 1,
+          "unit_price": "45.00"
+        }
+      ],
+      "text": "Birch Web Studio\nReceipt No: RCP-4008\nDate: 2026-10-24\nItem; Qty; Unit Price; Amount\nstock photos; 10; $7.00; $70.00\nfonts; 1; $45.00; $45.00\nPaid: $115.00\n",
+      "variant": "B"
+    }
+  ],
+  "learn": [
+    {
+      "ground_truth": {
+        "date": "2026-09-01",
+        "due_date": "2026-10-01",
+        "invoice_number": "INV-1001",
+        "total": "1250.00",
+        "vendor": "Maple Office Supplies"
+      },
+      "id": "D01",
+      "kind": "invoice",
+      "text": "INVOICE\nVendor: Maple Office Supplies\nInvoice Number: INV-1001\nDate: 2026-09-01\nItem: notebooks\nTotal: $1250.00\nDue Date: 2026-10-01\n"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-03",
+        "due_date": "2026-10-03",
+        "invoice_number": "INV-1002",
+        "total": "240.75",
+        "vendor": "Harbour Print Co"
+      },
+      "id": "D02",
+      "kind": "invoice",
+      "text": "INVOICE\nVendor: Harbour Print Co\nInvoice Number: INV-1002\nDate: 2026-09-03\nItem: poster printing\nTotal: $240.75\nDue Date: 2026-10-03\n"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-15",
+        "due_date": "2026-10-15",
+        "invoice_number": "8842",
+        "total": "89.99",
+        "vendor": "Cedar Catering"
+      },
+      "id": "D03",
+      "kind": "invoice",
+      "text": "INVOICE\nVendor: Cedar Catering\nInvoice No: 8842\nDate: 2026-09-15\nItem: event catering\nTotal: $89.99\nDue: 2026-10-15\n"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-20",
+        "due_date": null,
+        "invoice_number": "INV-1004",
+        "total": "600.00",
+        "vendor": "Elm Bookkeeping"
+      },
+      "id": "D04",
+      "kind": "invoice",
+      "text": "INVOICE\nVendor: Elm Bookkeeping\nInvoice Number: INV-1004\nDate: 2026-09-20\nItem: monthly bookkeeping\nTotal: $600.00\nPayment terms: on receipt\n"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-09-22",
+        "due_date": "2026-10-22",
+        "invoice_number": "INV-1005",
+        "total": "430.50",
+        "vendor": "Northwind Traders"
+      },
+      "id": "D05",
+      "kind": "invoice",
+      "text": "Northwind Traders\nInvoice Number: INV-1005\nDate: 2026-09-22\nItem: storage boxes\nAmount Due: $430.50\nDue Date: 2026-10-22\n"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-08-20",
+        "due_date": "2026-09-20",
+        "invoice_number": "INV-1006",
+        "total": "975.25",
+        "vendor": "Birch Web Studio"
+      },
+      "id": "D06",
+      "kind": "invoice",
+      "text": "INVOICE\nVendor: Birch Web Studio\nInvoice Number: INV-1006\nIssued 2026-08-20 for services rendered.\nItem: landing page design\nTotal: $975.25\nDue Date: 2026-09-20\n"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-02",
+        "due_date": "2026-11-02",
+        "invoice_number": "INV-1007",
+        "total": "312.40",
+        "vendor": "Willow Packaging"
+      },
+      "id": "D07",
+      "kind": "form",
+      "text": "PURCHASE FORM\nSupplier: Willow Packaging\nInvoice # INV-1007\nDate: 2026-10-02\nItem: shipping cartons\nTotal: $312.40\nDue Date: 2026-11-02\n"
+    },
+    {
+      "ground_truth": {
+        "date": "2026-10-15",
+        "due_date": "2026-11-15",
+        "invoice_number": "INV-1008",
+        "total": "100.00",
+        "vendor": "Aspen Travel"
+      },
+      "id": "D08",
+      "kind": "invoice",
+      "text": "INVOICE\nVendor: Aspen Travel\nInvoice Number: INV-1008\nDate: 15 October 2026\nItem: conference travel\nTotal: one hundred dollars\nDue Date: 2026-11-15\n"
+    }
+  ]
+}
