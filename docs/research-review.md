@@ -33,8 +33,8 @@ Question as built: on a synthetic document corpus, how accurate are
 hand-written extraction rules per field, and are their stated confidence
 values calibrated probabilities?
 
-Gap found: the README tagline and SPEC described the project as "OCR
-plus LLM extraction", which the shipped code does not do. Fixed: README
+Gap found: the README tagline and SPEC described the project as OCR
+plus model-based extraction, which the shipped code does not do. Fixed: README
 and SPEC now state the target scope and the shipped scope side by side
 ("rule-based over synthetic text, no OCR, no language model").
 
