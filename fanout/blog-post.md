@@ -57,8 +57,7 @@ harness and a review queue. Build scaled the pipeline to three
 document kinds with table extraction and cross-document QA.
 Compressed Deep calibrated the per-field confidence values over
 the unchanged Build eval and measured what a review queue
-captures and what it costs. Grades on the house 10,000 scale:
-Learn 8,700, Build 7,650, Deep 7,450.
+captures and what it costs.
 
 Future: the rest of the v2 Deep scope is named in ROADMAP.md in
 the repo as the v1.1 backlog. It includes a larger and real
@@ -94,8 +93,6 @@ The two misses are one document whose date is written out in
 words and whose total is written in words. Neither matches a
 supported pattern, and both are named in the Learn README.
 
-Grade: 8,700 of 10,000.
-
 ### Level 2, Build (release v0.5)
 
 Thirty-two synthetic documents (16 invoices, 8 forms, 8 receipts),
@@ -117,8 +114,6 @@ answered 11758.50 against a gold of 12108.50, because one
 document renders its total in words and the extractor misses it.
 The QA layer reports the spend of the records it could read, and
 the failure is published in the Build README, not buried.
-
-Grade: 7,650 of 10,000.
 
 ### Level 3, Deep, compressed (release v1.0)
 
@@ -156,7 +151,7 @@ and flagging below 0.60 captures both at the lowest burden in
 the sweep. As route labels that sort fields for review, they
 work. As probabilities of correctness, they do not.
 
-Grade: 7,450 of 10,000. Tests at this level: 12 new tests, 52
+Tests at this level: 12 new tests, 52
 unit tests in total, plus the scaffold smoke test.
 
 ## Honest limits
@@ -184,7 +179,7 @@ unit tests in total, plus the scaffold smoke test.
   fields and documents, not minutes. No human review workflow,
   review time, or reviewer accuracy is measured.
 - All levels ran on the Muse VM, not the assigned fleet node
-  Dell R610. That deduction is named in each level grade.
+  Dell R610. That limit is named in each stage of REPORT.md.
 
 ## Why this matters for real document work
 

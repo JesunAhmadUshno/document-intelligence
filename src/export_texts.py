@@ -4,8 +4,8 @@ The live dashboard in site/ reads this file at build time,
 so the browser extractor runs on exactly the texts the
 Python pipeline runs on and never retypes a document.
 
-Run: python level-2-build/export_texts.py
-Writes level-2-build/documents_export.json. No timestamps,
+Run: python src/export_texts.py
+Writes results/documents_export.json. No timestamps,
 so two runs produce an identical file.
 """
 import json
@@ -13,14 +13,12 @@ import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-LEARN = os.path.join(os.path.dirname(HERE), "level-1-learn")
-for p in (HERE, LEARN):
-    if p not in sys.path:
-        sys.path.insert(0, p)
+if HERE not in sys.path:
+    sys.path.insert(0, HERE)
 from corpus import DOCUMENTS as BUILD_DOCUMENTS  # noqa: E402
 from documents import DOCUMENTS as LEARN_DOCUMENTS  # noqa: E402
 
-OUT = os.path.join(HERE, "documents_export.json")
+OUT = os.path.join(os.path.dirname(HERE), "results", "documents_export.json")
 
 
 def export():

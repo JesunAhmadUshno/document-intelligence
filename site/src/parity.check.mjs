@@ -10,11 +10,11 @@ import {
 } from './engine.js';
 
 const load = (p) => JSON.parse(readFileSync(new URL(`../../${p}`, import.meta.url), 'utf8'));
-const docs = load('level-2-build/documents_export.json');
-const learn = load('level-1-learn/results_learn.json');
-const build = load('level-2-build/results_build.json');
-const deep = load('level-3-deep/results_deep.json');
-const stress = load('level-3-deep/results_stress.json');
+const docs = load('results/documents_export.json');
+const learn = load('results/results_learn.json');
+const build = load('results/results_build.json');
+const deep = load('results/results_deep.json');
+const stress = load('results/results_stress.json');
 
 // Learn: 8 documents x 5 fields, extracted value and confidence.
 assert.equal(docs.learn.length, learn.per_document.length);
@@ -61,6 +61,7 @@ assert.equal(brier(items), deep.brier);
 for (const s of deep.threshold_sweep) assert.ok(deepEqual(queueAtThreshold(items, s.threshold), s), `sweep ${s.threshold}`);
 for (const f of deep.per_field) assert.deepEqual(wilson(f.correct, f.count), f.wilson95, `wilson ${f.field}`);
 assert.deepEqual(wilson(2, 2), [0.3424, 1.0]);
+assert.deepEqual(wilson(deep.total_correct, deep.total_fields), deep.overall_wilson95, 'wilson overall');
 
 // Stress: each perturbation re-run through the browser pipeline.
 for (const p of stress.perturbations) {

@@ -64,7 +64,7 @@ errors at a burden of 10 of 160 fields.
 
 1. A larger eval with more authored hard cases, so the error
    set is large enough for capture rates to carry weight
-   (ROADMAP.md v1.1 item 1).
+   (PROPOSAL.md Next cycle item 1).
 2. Held-out threshold validation: choose the flag rule on a
    selection set, report capture and burden on a held-out set
    (v1.1 item 5).

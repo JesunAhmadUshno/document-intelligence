@@ -42,9 +42,8 @@ import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-BUILD = os.path.join(os.path.dirname(HERE), "level-2-build")
-if BUILD not in sys.path:
-    sys.path.insert(0, BUILD)
+if HERE not in sys.path:
+    sys.path.insert(0, HERE)
 from corpus import DOCUMENTS  # noqa: E402
 from pipeline import FIELDS, build_records  # noqa: E402
 
@@ -224,6 +223,7 @@ def evaluate(documents=None):
         "recommended_queue": recommended,
         "total_fields": len(items), "total_correct": total_correct,
         "overall_accuracy": round(total_correct / len(items), 4),
+        "overall_wilson95": wilson_interval(total_correct, len(items)),
         "mean_confidence": round(
             sum(i["confidence"] for i in items) / len(items), 4),
         "total_errors": len(items) - total_correct,

@@ -1,7 +1,7 @@
 """Run the Learn eval and write deterministic results.
 
-Run: python level-1-learn/run_learn.py
-Writes level-1-learn/results_learn.json. No timestamps, no randomness,
+Run: python src/run_learn.py
+Writes results/results_learn.json. No timestamps, no randomness,
 so two runs produce an identical file.
 """
 import json
@@ -36,7 +36,7 @@ def main():
            "per_field": result["per_field"],
            "review_queue": result["review_queue"],
            "summary": s}
-    path = os.path.join(HERE, "results_learn.json")
+    path = os.path.join(os.path.dirname(HERE), "results", "results_learn.json")
     with open(path, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, sort_keys=True)
         f.write("\n")

@@ -25,9 +25,9 @@ accuracy 0.9875), with the review queue measured.
   absences with the 2 errors.
 - Tests: 52 unit tests passing (12 Deep, 19 Build, 21 Learn),
   plus the scaffold smoke test.
-- Grade: Deep 7,450 of 10,000, with named deductions (synthetic
-  documents only, no OCR and no LLM, Muse VM run, only 2
-  errors, four discrete route labels, offline queue only).
+- Named limits: synthetic documents only, no OCR and no LLM,
+  Muse VM run, only 2 errors, four discrete route labels,
+  offline queue only.
 - Scope: no OCR, no LLM, synthetic plain text only. The rest
   of the v2 Deep scope is the v1.1 backlog in ROADMAP.md.
 
@@ -53,7 +53,6 @@ would produce. No OCR, no LLM.
   renders its total in words and the extractor misses it.
 - Tests: 40 unit tests passing (19 Build, 21 Learn), plus the
   scaffold smoke test.
-- Grade: Build 7,650 of 10,000.
 
 ## v0.1 Learn: document-intelligence
 
@@ -73,4 +72,3 @@ queue. No OCR, no real documents, no LLM.
   probability).
 - Review queue: 5 entries (3 missing, 2 low confidence).
 - Tests: 21 unit tests passing, plus the scaffold smoke test.
-- Grade: Learn 8,700 of 10,000.

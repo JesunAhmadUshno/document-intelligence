@@ -11,8 +11,8 @@ This is a separate experiment from the main eval and is
 reported separately: it measures brittleness to four
 everyday format shifts, not accuracy on a new corpus.
 
-Run: python level-3-deep/stress.py
-Writes level-3-deep/results_stress.json. Python standard
+Run: python src/stress.py
+Writes results/results_stress.json. Python standard
 library only. No OCR, no language model.
 """
 import json
@@ -21,9 +21,8 @@ import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-BUILD = os.path.join(os.path.dirname(HERE), "level-2-build")
-if BUILD not in sys.path:
-    sys.path.insert(0, BUILD)
+if HERE not in sys.path:
+    sys.path.insert(0, HERE)
 from corpus import DOCUMENTS  # noqa: E402
 from eval_build import evaluate_fields, evaluate_tables  # noqa: E402
 from pipeline import build_records  # noqa: E402
@@ -84,7 +83,7 @@ def main():
     for p in result["perturbations"]:
         print(f"{p['name']}: {p['total_correct']}/{p['total_fields']} fields "
               f"(accuracy {p['overall_accuracy']:.4f}), rows {p['rows_correct']}/{p['rows_total']}")
-    path = os.path.join(HERE, "results_stress.json")
+    path = os.path.join(os.path.dirname(HERE), "results", "results_stress.json")
     with open(path, "w", encoding="utf-8") as f:
         json.dump(result, f, indent=2, sort_keys=True)
         f.write("\n")

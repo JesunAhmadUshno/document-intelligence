@@ -1,15 +1,14 @@
 name: Pages
 
-# Builds the live dashboard in site/ from the committed level results and document
-# export, and publishes it to GitHub Pages at /document-intelligence/.
+# Builds the live dashboard in site/ from results/ and README.md, PROPOSAL.md and REPORT.md, and publishes it to GitHub Pages at /document-intelligence/.
 # "npm run build" first runs src/parity.check.mjs, so a browser port that drifts from
-# the Python results fails the deploy.
+# the committed results fails the deploy.
 # Pages must be set to build_type=workflow (it was a legacy build from main:/docs,
 # which only held a short text summary; docs/index.md stays in the repo).
 on:
   push:
     branches: [main]
-    paths: ['site/**', 'level-1-learn/results_learn.json', 'level-2-build/results_build.json', 'level-2-build/documents_export.json', 'level-3-deep/results_*.json', 'level-3-deep/README.md', 'ROADMAP.md', '.github/workflows/pages.yml']
+    paths: ['site/**', 'results/**', 'README.md', 'PROPOSAL.md', 'REPORT.md', '.github/workflows/pages.yml']
   workflow_dispatch:
 
 permissions:

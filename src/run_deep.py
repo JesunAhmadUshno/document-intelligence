@@ -1,7 +1,7 @@
 """Run the Deep calibration end to end and write results.
 
-Run: python level-3-deep/run_deep.py
-Writes level-3-deep/results_deep.json. No timestamps, no
+Run: python src/run_deep.py
+Writes results/results_deep.json. No timestamps, no
 randomness, so two runs produce an identical file.
 """
 import json
@@ -45,6 +45,7 @@ def main():
         "total_correct": result["total_correct"],
         "total_errors": result["total_errors"],
         "overall_accuracy": result["overall_accuracy"],
+        "overall_wilson95": result["overall_wilson95"],
         "mean_confidence": result["mean_confidence"],
         "bands": result["bands"],
         "ece": result["ece"],
@@ -57,7 +58,7 @@ def main():
         "baselines": result["baselines"],
         "breakdowns": result["breakdowns"],
     }
-    path = os.path.join(HERE, "results_deep.json")
+    path = os.path.join(os.path.dirname(HERE), "results", "results_deep.json")
     with open(path, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, sort_keys=True)
         f.write("\n")

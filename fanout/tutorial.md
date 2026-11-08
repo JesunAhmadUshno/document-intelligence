@@ -34,7 +34,7 @@ cd document-intelligence
 Optional smoke check, before the levels:
 
 ```text
-python tests/test_smoke.py
+python -m unittest tests.test_layout -v
 ```
 
 Expected: a line that says the scaffold smoke test passed, with
@@ -42,14 +42,14 @@ Expected: a line that says the scaffold smoke test passed, with
 
 ## Step 1: Level 1, Learn, extraction with a confidence rule
 
-Read level-1-learn/README.md first. It defines the five fields,
+Read the Learn stage of REPORT.md first. It defines the five fields,
 the confidence rule, the eval harness, and the review queue rule
 (flag confidence below 0.80 or a missing value).
 
 Run the Learn evaluator:
 
 ```text
-python level-1-learn/run_learn.py
+python src/run_learn.py
 ```
 
 Run the Learn tests:
@@ -61,7 +61,7 @@ python -m unittest tests.test_learn_extraction -v
 Read your results:
 
 - The runner prints one line per document and writes
-  level-1-learn/results_learn.json.
+  results/results_learn.json.
 - Expected summary on the shipped set: 38 of 40 fields correct
   across 8 documents, accuracy 0.9500, mean confidence 0.8800,
   review queue 5 entries.
@@ -78,7 +78,7 @@ value, the confidence, and the correct flag against ground truth.
 
 ## Step 2: Level 2, Build, pipeline, tables, and cross-document QA
 
-Read level-2-build/README.md and level-2-build/BUILD-SPEC.md
+Read the Build stage of REPORT.md and the Build plan in PROPOSAL.md
 first. They define the 32-document corpus (16 invoices, 8 forms,
 8 receipts, 2 layout variants per type), the table formats, and
 the 9 typed QA question forms. Remember: the input is plain text
@@ -88,7 +88,7 @@ records only.
 Run the Build pipeline:
 
 ```text
-python level-2-build/run_build.py
+python src/run_build.py
 ```
 
 Run the Build tests:
@@ -100,7 +100,7 @@ python -m unittest tests.test_build_pipeline -v
 Read your results:
 
 - The runner prints the field, table, and QA summaries and
-  writes level-2-build/results_build.json.
+  writes results/results_build.json.
 - Expected: 158 of 160 fields correct, accuracy 0.9875, mean
   confidence 0.8688; tables 65 of 65 rows and 260 of 260 cells
   correct, 0 extra rows; QA 15 of 16 correct, accuracy 0.9375.
@@ -113,14 +113,14 @@ Read your results:
 
 ## Step 3: Level 3, Deep, calibration and the review queue
 
-Read level-3-deep/README.md and level-3-deep/DEEP-SPEC.md first.
+Read the Deep stage of REPORT.md and the Deep plan in PROPOSAL.md first.
 They state the ECE formula, the four confidence bands, and the
 threshold sweep before any code runs.
 
 Run the Deep calibration:
 
 ```text
-python level-3-deep/run_deep.py
+python src/run_deep.py
 ```
 
 Run the Deep tests:
@@ -132,7 +132,7 @@ python -m unittest tests.test_deep_calibration -v
 Read your results:
 
 - The runner prints the band table, the ECE and Brier score, and
-  the queue sweep, and writes level-3-deep/results_deep.json.
+  the queue sweep, and writes results/results_deep.json.
 - Expected bands: 0.00 accuracy 0.8000 (8 of 10), 0.60 accuracy
   1.0000 (4 of 4), 0.80 accuracy 1.0000 (47 of 47), 1.00 accuracy
   1.0000 (99 of 99). ECE 0.1187, Brier score 0.0658.
@@ -152,14 +152,14 @@ Read your results:
 
 ```text
 python -m unittest discover -s tests -v
-python tests/test_smoke.py
+python -m unittest tests.test_layout -v
 ```
 
 Expected: 52 tests, all passing, plus the scaffold smoke test.
 
 ## What to try next (named v1.1 backlog, not built)
 
-ROADMAP.md in the repo names the next steps honestly: a larger
+PROPOSAL.md (Next cycle) in the repo names the next steps honestly: a larger
 and real document eval, an OCR path and an LLM extraction path
 when a free route is verified, held-out threshold validation,
 and a human review workflow with timing. None of that exists at

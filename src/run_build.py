@@ -1,7 +1,7 @@
 """Run the Build pipeline end to end and write results.
 
-Run: python level-2-build/run_build.py
-Writes level-2-build/results_build.json. No timestamps, no
+Run: python src/run_build.py
+Writes results/results_build.json. No timestamps, no
 randomness, so two runs produce an identical file.
 """
 import json
@@ -47,7 +47,7 @@ def main():
         "per_question": result["per_question"],
         "qa_summary": result["qa_summary"],
     }
-    path = os.path.join(HERE, "results_build.json")
+    path = os.path.join(os.path.dirname(HERE), "results", "results_build.json")
     with open(path, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, sort_keys=True)
         f.write("\n")
