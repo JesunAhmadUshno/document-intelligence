@@ -22,6 +22,13 @@ from the old Learn, Build and Deep ladder; v1.0.1 was never tagged.
   (README, docs, level write-ups, fan-out drafts, publicity log,
   dashboard).
 
+### Fixed
+- 2026-11-08: Float means, ECE and Brier use math.fsum, so results are
+  byte-identical on Python 3.11 and 3.12. Plain sum() rounded the exact
+  ties 0.86875 and 0.11875 differently on 3.11 (the boundary first seen
+  in the 1.0 polish pack); the new CI regeneration check caught it on
+  the 3.11 leg. No published (3.12) value changed.
+
 ### Added
 - 2026-11-08: Wilson 95% interval on overall field accuracy
   (overall_wilson95 in results/results_deep.json, 0.9556 to 0.9966),
