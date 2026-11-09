@@ -7,7 +7,7 @@ patterns run first for the fields they name, because the Learn
 vendor fallback would otherwise take the RECEIPT header line
 as a vendor.
 
-Table extraction follows the stated format in BUILD-SPEC.md:
+Table extraction follows the stated format in PROPOSAL.md (Build plan):
 a header row naming item, quantity, unit price, and line total,
 separated by pipe or semicolon; each following row with the
 same delimiter and exactly 4 cells is a line item; the table
@@ -15,7 +15,7 @@ ends at the first line without that delimiter.
 
 The input is synthetic plain text in the layout an OCR step
 would produce. There is no OCR and no LLM here: those are the
-named substitutions in BUILD-SPEC.md.
+named substitutions in PROPOSAL.md (Build plan).
 
 Only the Python standard library is used.
 """
@@ -24,9 +24,8 @@ import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-LEARN = os.path.join(os.path.dirname(HERE), "level-1-learn")
-if LEARN not in sys.path:
-    sys.path.insert(0, LEARN)
+if HERE not in sys.path:
+    sys.path.insert(0, HERE)
 import extractor as learn_extractor  # noqa: E402
 from corpus import DOCUMENTS  # noqa: E402
 

@@ -1657,6 +1657,10 @@
   ],
   "mean_confidence": 0.8688,
   "overall_accuracy": 0.9875,
+  "overall_wilson95": [
+    0.9556,
+    0.9966
+  ],
   "per_field": [
     {
       "accuracy": 1.0,

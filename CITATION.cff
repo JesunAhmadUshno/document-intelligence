@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "document-intelligence: a calibration audit of route-label confidence in a rule-based document extractor"
+authors:
+  - family-names: Ushno
+    given-names: Jesun Ahmad
+repository-code: "https://github.com/JesunAhmadUshno/document-intelligence"
+url: "https://jesunahmadushno.github.io/document-intelligence/"
+license: Apache-2.0
+date-released: 2026-11-05
+version: "1.0"

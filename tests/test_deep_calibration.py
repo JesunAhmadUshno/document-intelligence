@@ -1,6 +1,6 @@
 """Unit tests for Level 3 Deep. Hand-computed expectations.
 
-Hand counts from the Build records (level-2-build/
+Hand counts from the Build records (results/
 results_build.json) and the corpus ground truth:
 
 - Confidence values over 160 fields: 1.00 appears 99 times,
@@ -37,7 +37,7 @@ import sys
 import unittest
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "level-3-deep"))
+sys.path.insert(0, os.path.join(ROOT, "src"))
 from calibration import (  # noqa: E402
     build_items,
     evaluate,

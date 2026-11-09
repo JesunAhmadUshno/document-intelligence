@@ -42,9 +42,8 @@ import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-BUILD = os.path.join(os.path.dirname(HERE), "level-2-build")
-if BUILD not in sys.path:
-    sys.path.insert(0, BUILD)
+if HERE not in sys.path:
+    sys.path.insert(0, HERE)
 from corpus import DOCUMENTS  # noqa: E402
 from pipeline import FIELDS, build_records  # noqa: E402
 
@@ -98,12 +97,12 @@ def band_table(items):
 
 def expected_calibration_error(items, bands):
     n = len(items)
-    return round(sum((b["count"] / n) * abs(b["accuracy"] - b["confidence"])
+    return round(math.fsum((b["count"] / n) * abs(b["accuracy"] - b["confidence"])
                      for b in bands), 4)
 
 
 def brier_score(items):
-    return round(sum((i["confidence"] - (1 if i["correct"] else 0)) ** 2
+    return round(math.fsum((i["confidence"] - (1 if i["correct"] else 0)) ** 2
                      for i in items) / len(items), 4)
 
 
@@ -169,10 +168,10 @@ def baselines(items, bands):
                                 "brier": brier_score(items)},
         "constant_overall_accuracy": {
             "confidence": round(acc, 4), "ece": 0.0,
-            "brier": round(sum((acc - y) ** 2 for y in outcome) / n, 4)},
+            "brier": round(math.fsum((acc - y) ** 2 for y in outcome) / n, 4)},
         "band_accuracy_map_in_sample": {
             "ece": 0.0,
-            "brier": round(sum((c - y) ** 2 for c, y in zip(mapped, outcome)) / n, 4)},
+            "brier": round(math.fsum((c - y) ** 2 for c, y in zip(mapped, outcome)) / n, 4)},
     }
 
 
@@ -183,7 +182,7 @@ def _group_row(group, sel):
         "errors": len(sel) - correct,
         "accuracy": round(correct / len(sel), 4),
         "wilson95": wilson_interval(correct, len(sel)),
-        "mean_confidence": round(sum(i["confidence"] for i in sel) / len(sel), 4),
+        "mean_confidence": round(math.fsum(i["confidence"] for i in sel) / len(sel), 4),
         "ece": expected_calibration_error(sel, band_table(sel)),
     }
 
@@ -224,8 +223,9 @@ def evaluate(documents=None):
         "recommended_queue": recommended,
         "total_fields": len(items), "total_correct": total_correct,
         "overall_accuracy": round(total_correct / len(items), 4),
+        "overall_wilson95": wilson_interval(total_correct, len(items)),
         "mean_confidence": round(
-            sum(i["confidence"] for i in items) / len(items), 4),
+            math.fsum(i["confidence"] for i in items) / len(items), 4),
         "total_errors": len(items) - total_correct,
         "total_documents": len({i["doc_id"] for i in items}),
         "baselines": baselines(items, bands),

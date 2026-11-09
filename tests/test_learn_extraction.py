@@ -4,7 +4,7 @@ import sys
 import unittest
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "level-1-learn"))
+sys.path.insert(0, os.path.join(ROOT, "src"))
 from documents import DOCUMENTS, FIELDS  # noqa: E402
 from extractor import (  # noqa: E402
     evaluate,

@@ -1,7 +1,7 @@
 // Browser port of the repo's extraction, QA and calibration code.
-// level-1-learn/extractor.py (EXTRACTORS), level-2-build/pipeline.py (BUILD_FIRST,
-// extract_table), level-2-build/qa.py (answer_question), level-2-build/eval_build.py
-// (field and table scoring), level-3-deep/calibration.py and level-3-deep/stress.py.
+// src/extractor.py (EXTRACTORS), src/pipeline.py (BUILD_FIRST,
+// extract_table), src/qa.py (answer_question), src/eval_build.py
+// (field and table scoring), src/calibration.py and src/stress.py.
 // parity.check.mjs runs this file over every document and fails the build on any
 // difference from the committed results_*.json files.
 
@@ -171,7 +171,7 @@ export function scoreFields(docs, records) {
   return { per, correct: per.reduce((s, p) => s + p.correct, 0), total: docs.length * FIELDS.length };
 }
 
-// ---- calibration (level-3-deep/calibration.py) ----
+// ---- calibration (src/calibration.py) ----
 // CPython 3.12 sum() over floats uses Neumaier compensated summation; match it.
 export function pysum(xs) {
   let s = 0, c = 0;
@@ -221,7 +221,7 @@ export function queueAtThreshold(items, threshold) {
   };
 }
 
-// ---- perturbation stress set (level-3-deep/stress.py) ----
+// ---- perturbation stress set (src/stress.py) ----
 export const PERTURB = {
   none: (t) => t,
   lowercase_labels: (t) => t.split('\n').map((l) => { const k = l.indexOf(':'); return k < 0 ? l : l.slice(0, k).toLowerCase() + l.slice(k); }).join('\n'),

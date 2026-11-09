@@ -4,7 +4,7 @@
 layout variants per type (6 variants). Every document is authored
 for this project with invented vendor names. The documents are
 plain text in the layout an OCR step would produce. There is no
-OCR and no LLM in this level: see BUILD-SPEC.md for the named
+OCR and no LLM in this level: see PROPOSAL.md (Build plan) for the named
 substitutions.
 
 Ground truth is built from the authored spec of each document:

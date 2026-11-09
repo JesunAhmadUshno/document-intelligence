@@ -1,11 +1,12 @@
 import { useMemo, useState, useEffect, useId } from 'react';
-import exported from '../../level-2-build/documents_export.json';
-import learn from '../../level-1-learn/results_learn.json';
-import build from '../../level-2-build/results_build.json';
-import deep from '../../level-3-deep/results_deep.json';
-import stress from '../../level-3-deep/results_stress.json';
-import deepReadme from '../../level-3-deep/README.md?raw';
-import roadmap from '../../ROADMAP.md?raw';
+import exported from '../../results/documents_export.json';
+import learn from '../../results/results_learn.json';
+import build from '../../results/results_build.json';
+import deep from '../../results/results_deep.json';
+import stress from '../../results/results_stress.json';
+import report from '../../REPORT.md?raw';
+import proposal from '../../PROPOSAL.md?raw';
+import readme from '../../README.md?raw';
 import {
   FIELDS, extractFields, extractTable, buildRecord, answerQuestion, deepEqual,
   queueAtThreshold, wilson, PERTURB, scoreFields, scoreTables,
@@ -16,8 +17,12 @@ const blob = (p) => `${REPO}/blob/main/${p}`;
 const pct = (x, d = 1) => `${(x * 100).toFixed(d)}%`;
 const f4 = (x) => x.toFixed(4);
 // Provenance label parsed from the Deep README results heading, never typed here.
-const [, RECORDED_ON, RECORDED_WHERE] = deepReadme.match(/## Results \(measured (\d{4}-\d{2}-\d{2}), ([^,]+),/);
+const [, RECORDED_ON, RECORDED_WHERE] = report.match(/## Results \(measured (\d{4}-\d{2}-\d{2}), ([^,]+),/);
 const RECORDED = `recorded ${RECORDED_ON}, ${RECORDED_WHERE}`;
+// The verdict sentence from the README abstract, e.g. "Functional, not pre-registered".
+const [, VERDICT] = readme.match(/\*\*Verdict\.\*\* ([^.]+)\./);
+// The backlog is the numbered list in PROPOSAL.md's "## Next cycle" section.
+const roadmap = proposal.split(/^## Next cycle\n/m)[1];
 const BACKLOG = [...roadmap.matchAll(/^(\d+)\. ([^.]+)\./gm)].map((m) => [m[1], m[2].replace(/\bLLM\b/g, 'Language-model')]);
 
 const BUILD_DOCS = exported.build;
@@ -47,10 +52,10 @@ function MenuBar() {
     <div className="menubar" role="banner">
       <span className="apple" aria-hidden="true">◆</span>
       <a className="app" href="#top">Document Intelligence</a>
-      <a className="m" href={blob('level-1-learn/README.md')}>Learn</a>
-      <a className="m" href={blob('level-2-build/README.md')}>Build</a>
-      <a className="m" href={blob('level-3-deep/README.md')}>Deep</a>
-      <a className="m" href={blob('docs/research-review.md')}>Review</a>
+      <a className="m" href={blob('README.md')}>Abstract</a>
+      <a className="m" href={blob('PROPOSAL.md')}>Proposal</a>
+      <a className="m" href={blob('REPORT.md')}>Report</a>
+      <a className="m" href={blob('CHANGELOG.md')}>Changelog</a>
       <span className="spacer" />
       <span className="status"><i /> Browser port matches Python</span>
       <a href={REPO}>GitHub ↗</a>
@@ -116,7 +121,7 @@ export default function App() {
       <Reproduce />
       <Dock />
       <footer>
-        Every number on this page is read at build time from <code>level-*/results_*.json</code> or computed in your browser by a port of the Python extractor that a build-time parity check holds to the committed results.
+        Every number on this page is read at build time from <code>results/*.json</code> or computed in your browser by a port of the Python extractor that a build-time parity check holds to the committed results.
         <br />Documents are synthetic and every vendor name is invented. Code: Apache-2.0.
       </footer>
     </div>
@@ -130,6 +135,7 @@ function Hero() {
       <div className="head">
         <p className="eyebrow">Learn · Build · Deep · rule-based document extraction</p>
         <span className="pill warn">● Synthetic text, no OCR</span>
+        <span className="pill">Verdict: {VERDICT}</span>
       </div>
       <h1>Hand-written rules get {fs.total_correct} of {fs.total_fields} fields right. Their confidence scores are <em>route labels</em>, not probabilities.</h1>
       <p className="sub">
@@ -174,7 +180,7 @@ function Extract({ sel, setSel, text, setText, reset, edited }) {
           <p className="eyebrow">Live extractor playground</p>
           <h2>Edit any document and watch the rules <em>re-fire</em>.</h2>
           <p className="sub">
-            A JavaScript port of <a href={blob('level-1-learn/extractor.py')}>extractor.py</a> and <a href={blob('level-2-build/pipeline.py')}>pipeline.py</a> runs on the exact texts the Python code reads.
+            A JavaScript port of <a href={blob('src/extractor.py')}>extractor.py</a> and <a href={blob('src/pipeline.py')}>pipeline.py</a> runs on the exact texts the Python code reads.
             Before every build, a parity check runs the port over all {BUILD_DOCS.length + LEARN_DOCS.length} documents and stops the build if any value, confidence or table row differs from the committed results.
           </p>
         </div>
@@ -350,7 +356,7 @@ function QA({ records, edits, setText, reset }) {
           <p className="eyebrow">Cross-document question answering</p>
           <h2>One total written in words moves the <em>grand total</em>.</h2>
           <p className="sub">
-            A port of <a href={blob('level-2-build/qa.py')}>qa.py</a> answers {QUESTIONS.length} structured questions from the records extracted live above, adding money in integer cents so it matches Python's Decimal exactly. Gold answers come from <a href={blob('level-2-build/results_build.json')}>results_build.json</a>. Questions are structured queries, not free text.
+            A port of <a href={blob('src/qa.py')}>qa.py</a> answers {QUESTIONS.length} structured questions from the records extracted live above, adding money in integer cents so it matches Python's Decimal exactly. Gold answers come from <a href={blob('results/results_build.json')}>results_build.json</a>. Questions are structured queries, not free text.
           </p>
         </div>
         <span className={`pill ${okAll.every(Boolean) ? 'good' : 'warn'}`}>{okAll.filter(Boolean).length}/{QUESTIONS.length} correct live</span>
@@ -464,7 +470,7 @@ function Queue() {
           <p className="eyebrow">Review-queue threshold explorer</p>
           <h2>Flag below {recQueue.threshold.toFixed(2)} and a reviewer sees <em>every error</em> in {recQueue.fields_flagged} fields.</h2>
           <p className="sub">
-            Drag the threshold. The browser recomputes the queue over the {deep.total_fields} recorded extractions in <a href={blob('level-3-deep/results_deep.json')}>results_deep.json</a> using a port of <span className="mono">queue_at_threshold</span>. The parity check holds it to the recorded sweep at {deep.threshold_sweep.map((x) => x.threshold.toFixed(2)).join(', ')}.
+            Drag the threshold. The browser recomputes the queue over the {deep.total_fields} recorded extractions in <a href={blob('results/results_deep.json')}>results_deep.json</a> using a port of <span className="mono">queue_at_threshold</span>. The parity check holds it to the recorded sweep at {deep.threshold_sweep.map((x) => x.threshold.toFixed(2)).join(', ')}.
           </p>
         </div>
         <span className="pill info">{isRecorded ? 'matches recorded sweep' : 'computed live'}</span>
@@ -499,7 +505,7 @@ function Stress() {
       <p className="eyebrow">Perturbation stress set · new experiment, reported separately</p>
       <h2>The rules are <em>format-bound</em>: small surface changes erase most of the accuracy.</h2>
       <p className="sub">
-        Each shift is a fixed text edit applied to all {BUILD_DOCS.length} Build documents with labels unchanged (<a href={blob('level-3-deep/stress.py')}>stress.py</a>). Your browser re-runs the whole pipeline for every shift; the numbers below are computed here and the build checks them against <span className="mono">results_stress.json</span>. Unperturbed: {base.total_correct}/{base.total_fields} fields, {base.rows_correct}/{base.rows_total} rows.
+        Each shift is a fixed text edit applied to all {BUILD_DOCS.length} Build documents with labels unchanged (<a href={blob('src/stress.py')}>stress.py</a>). Your browser re-runs the whole pipeline for every shift; the numbers below are computed here and the build checks them against <span className="mono">results_stress.json</span>. Unperturbed: {base.total_correct}/{base.total_fields} fields, {base.rows_correct}/{base.rows_total} rows.
       </p>
       <div className="bars" style={{ marginTop: 16 }}>
         {live.map((p) => (
@@ -534,7 +540,7 @@ function Limits() {
       <div className="grid2" style={{ marginTop: 16 }}>
         {items.map(([t, d]) => <div className="tile" key={t}><h3>{t}</h3><p className="hint" style={{ margin: '6px 0 0', fontSize: 13 }}>{d}</p></div>)}
       </div>
-      <h3 style={{ marginTop: 20 }}>v1.1 backlog from <a href={blob('ROADMAP.md')}>ROADMAP.md</a> (named, not built, not claimed)</h3>
+      <h3 style={{ marginTop: 20 }}>Next cycle from <a href={blob('PROPOSAL.md')}>PROPOSAL.md</a> (named, not built, not claimed)</h3>
       <ol className="backlog">{BACKLOG.map(([n, t]) => <li key={n}><span className="n">{n}</span>{t}</li>)}</ol>
     </section>
   );
@@ -542,21 +548,20 @@ function Limits() {
 
 function Reproduce() {
   const docs = [
-    ['level-1-learn/README.md', 'Learn', 'Rules, confidence, review queue'],
-    ['level-2-build/README.md', 'Build', 'Tables and cross-document QA'],
-    ['level-3-deep/README.md', 'Deep', 'Calibration audit and verdict'],
-    ['level-2-build/BUILD-SPEC.md', 'Build spec', 'Named substitutions, written first'],
-    ['level-3-deep/DEEP-SPEC.md', 'Deep spec', 'ECE formula and bands'],
-    ['docs/research-review.md', 'Research review', 'Graded against a PhD rubric'],
+    ['README.md', 'Abstract', 'Question, headline, verdict, reproduce'],
+    ['PROPOSAL.md', 'Proposal', 'Scope, Build and Deep plans, next cycle (not locked)'],
+    ['REPORT.md', 'Report', 'Results with evidence, each stage, self-review'],
+    ['docs/decisions/0001-named-substitutions.md', 'Decisions', 'Substitutions, eval reuse, absence scoring'],
+    ['CHANGELOG.md', 'Changelog', 'What changed and when'],
   ];
   return (
     <section id="reproduce" className="card window reveal" data-title="Terminal — reproduce">
       <p className="eyebrow">Reproduce it</p>
       <h2>Standard-library Python, deterministic output, <em>git stays clean</em>.</h2>
       <ol className="steps" style={{ marginTop: 16 }}>
-        <li><span className="n">1</span><div><b>Run the three levels</b><div className="hint"><code>python3 level-1-learn/run_learn.py && python3 level-2-build/run_build.py && python3 level-3-deep/run_deep.py</code></div></div></li>
-        <li><span className="n">2</span><div><b>Run the tests</b><div className="hint"><code>python3 tests/test_smoke.py && python3 -m unittest discover -s tests -p "test_*.py"</code></div></div></li>
-        <li><span className="n">3</span><div><b>Check nothing moved</b><div className="hint"><code>git diff --exit-code -- level-*/results_*.json</code></div></div></li>
+        <li><span className="n">1</span><div><b>Run every stage</b><div className="hint"><code>python3 src/run_learn.py && python3 src/run_build.py && python3 src/run_deep.py && python3 src/stress.py && python3 src/export_texts.py</code></div></div></li>
+        <li><span className="n">2</span><div><b>Run the tests</b><div className="hint"><code>python3 -m unittest discover -s tests -p "test_*.py"</code></div></div></li>
+        <li><span className="n">3</span><div><b>Check nothing moved</b><div className="hint"><code>git diff --exit-code -- results/</code></div></div></li>
       </ol>
       <div className="docs" style={{ marginTop: 20 }}>
         {docs.map(([p, t, d]) => <a key={p} href={blob(p)}><b>{t}</b><small>{d}</small></a>)}

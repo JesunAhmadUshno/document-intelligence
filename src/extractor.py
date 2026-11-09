@@ -21,6 +21,7 @@ below 0.80 or its value is None.
 
 Only the Python standard library is used.
 """
+import math
 import re
 
 from documents import DOCUMENTS, FIELDS
@@ -164,7 +165,7 @@ def evaluate(documents=None):
         "total_correct": total_correct,
         "overall_accuracy": round(total_correct / total_fields, 4)
         if total_fields else 0.0,
-        "mean_confidence": round(sum(confidences) / len(confidences), 4)
+        "mean_confidence": round(math.fsum(confidences) / len(confidences), 4)
         if confidences else 0.0,
         "review_queue_count": len(review_queue),
     }

@@ -7,6 +7,7 @@ from the labelled documents, so a QA bug and a gold bug would
 have to be the same bug twice to hide. The QA layer itself
 only ever sees extracted records, which carry no ground truth.
 """
+import math
 from decimal import Decimal
 
 from corpus import DOCUMENTS
@@ -136,5 +137,5 @@ def evaluate(documents=None):
         "records": records, "per_field": per_field,
         "field_summary": field_summary, "table": table,
         "per_question": per_question, "qa_summary": qa_summary,
-        "mean_confidence": round(sum(confidences) / len(confidences), 4),
+        "mean_confidence": round(math.fsum(confidences) / len(confidences), 4),
     }

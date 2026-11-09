@@ -2,7 +2,7 @@
 
 Questions are structured dicts (type plus params), not natural
 language: no LLM is available, and that substitution is named
-in BUILD-SPEC.md. Every answer is computed only from the
+in PROPOSAL.md (Build plan). Every answer is computed only from the
 extracted records built by pipeline.py (which carry no ground
 truth), and every answer cites the document ids it used.
 

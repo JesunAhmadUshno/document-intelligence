@@ -21,8 +21,7 @@ import sys
 import unittest
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "level-3-deep"))
-sys.path.insert(0, os.path.join(ROOT, "level-2-build"))
+sys.path.insert(0, os.path.join(ROOT, "src"))
 import export_texts  # noqa: E402
 import stress  # noqa: E402
 from calibration import evaluate, wilson_interval  # noqa: E402
@@ -33,6 +32,12 @@ RESULT = evaluate()
 class TestWilson(unittest.TestCase):
     def test_two_of_two(self):
         self.assertEqual(wilson_interval(2, 2), [0.3424, 1.0])
+
+    def test_overall_accuracy_interval(self):
+        # Hand check, 158 of 160, z = 1.96: centre (0.9875 + 0.0120) / 1.0240
+        # = 0.9761, half width 1.96 * sqrt(0.0000772 + 0.0000375) / 1.0240
+        # = 0.0205, so [0.9556, 0.9966]. This is the README headline interval.
+        self.assertEqual(RESULT["overall_wilson95"], [0.9556, 0.9966])
 
     def test_zero_of_zero_is_uninformative(self):
         self.assertEqual(wilson_interval(0, 0), [0.0, 1.0])
@@ -102,7 +107,7 @@ class TestStress(unittest.TestCase):
         self.assertEqual(stress.PERTURB["indented_lines"](text), "  Date: 2026-09-01\n  Total: $12.50\n")
 
     def test_committed_results_are_current(self):
-        with open(os.path.join(ROOT, "level-3-deep", "results_stress.json"), encoding="utf-8") as f:
+        with open(os.path.join(ROOT, "results", "results_stress.json"), encoding="utf-8") as f:
             self.assertEqual(json.load(f), json.loads(json.dumps(stress.evaluate())))
 
 

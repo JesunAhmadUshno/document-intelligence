@@ -43,7 +43,6 @@ built work.
   for human review, the labels work. As probabilities, they do
   not, and the project says so in its own README.
 - Tests: 52 unit tests passing, plus the scaffold smoke test.
-- Level grades (of 10,000): Learn 8,700, Build 7,650, Deep 7,450.
 
 ## Why it matters
 
