@@ -139,10 +139,13 @@ Review queue sweep:
 | confidence below 0.80 (Learn rule) | 14 | 0.0875 | 10 | 2 of 2 | 1.0000 |
 | confidence below 1.00 | 61 | 0.3812 | 21 | 2 of 2 | 1.0000 |
 
-Three findings carry the verdict. First, every non-zero band is
-underconfident: fields scored 0.60 and 0.80 are right every time
-on this eval, so the ECE of 0.1187 is entirely underconfidence
-(overall accuracy 0.9875 minus mean confidence 0.8688). Second,
+Three findings carry the verdict. First, the 0.60 and 0.80 bands
+are underconfident: fields scored 0.60 and 0.80 are right every
+time on this eval, while the 1.00 band is exact (99 of 99). Of the
+ECE of 0.1187, 0.0688 comes from those two bands and 0.0500 from
+the 0.00 band's correct absences; since no band is overconfident,
+it also equals overall accuracy 0.9875 minus mean confidence
+0.8688. Second,
 the 0.00 band pools two opposite meanings: 8 correctly detected
 receipt due-date absences and the 2 real errors, so its pooled
 accuracy of 0.8000 describes neither case. Third, the scores
