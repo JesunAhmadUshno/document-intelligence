@@ -8,8 +8,9 @@ confidence values calibrated probabilities?
 from 32 synthetic documents (accuracy 0.9875, Wilson 95% interval
 0.9556 to 0.9966), and their four confidence values are route labels,
 not probabilities: expected calibration error 0.1187 and Brier score
-0.0658, with every non-zero band underconfident. The eval holds only 2
-errors, so every rate is indicative, and the rules are format-bound.
+0.0658. The 0.60 and 0.80 bands are underconfident and the 1.00 band
+is exact (99 of 99). The eval holds only 2 errors, so every rate is
+indicative, and the rules are format-bound.
 
 **Field.** ML and AI research (evaluation and calibration).
 **Job family.** Applied AI engineering: document extraction and evaluation.

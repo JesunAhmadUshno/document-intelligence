@@ -399,7 +399,7 @@ function Calibration() {
   return (
     <section id="calibration" className="card window reveal" data-title="calibration.plot — reliability diagram">
       <p className="eyebrow">Calibration audit · {RECORDED}</p>
-      <h2>Every non-zero band is <em>underconfident</em>; the 0.00 band mixes two meanings.</h2>
+      <h2>The 0.60 and 0.80 bands are <em>underconfident</em>, 1.00 is exact; the 0.00 band mixes two meanings.</h2>
       <p className="sub">
         Bands are the four stated confidence values themselves, so no binning choice is hidden. Points sit on or above the diagonal: every field in a non-zero band was right.
         The 0.00 band pools {dueZero.correct} correct absences (receipts have no due date) with the {deep.total_errors} real misses, so its {f4(zero.accuracy)} describes neither.

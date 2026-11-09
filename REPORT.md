@@ -28,7 +28,7 @@ scores below are exploratory.
 
 | Hypothesis | Result | Score |
 | --- | --- | --- |
-| H1: the confidence values are calibrated probabilities | ECE 0.1187; every non-zero band underconfident; the 0.00 band pools 8 correct absences with the 2 errors | Rejected |
+| H1: the confidence values are calibrated probabilities | ECE 0.1187; the 0.60 and 0.80 bands underconfident, the 1.00 band exact (99/99); the 0.00 band pools 8 correct absences with the 2 errors | Rejected |
 | H2: a threshold captures every error at low burden | Below 0.60: 2 of 2 errors at burden 0.0625; but n = 2 errors, interval 0.3424 to 1.0000, threshold chosen in-sample | Supported on this eval only; not a reliable rate |
 | Learn and Build acceptance | Code runs end to end, tests pass, result tables published | Met |
 
@@ -89,7 +89,7 @@ Measured 2026-11-05 with src/run_deep.py on the Muse VM, Python 3.12, over the u
 | Expected calibration error | 0.1187 (weighted absolute gap formula in PROPOSAL.md (Deep plan)); Brier score 0.0658 |
 | Review queue (flag confidence below 0.60) | 10 of 160 fields flagged (burden 0.0625), 10 of 32 documents, both errors captured (2 of 2, capture rate 1.0000) |
 | Learn queue rule (below 0.80) | 14 fields flagged (burden 0.0875), same 2 of 2 errors captured |
-| Verdict | Confidence values are route labels, not trustworthy probabilities: every non-zero band is underconfident, and the 0.00 band pools 8 correct absences with the 2 errors |
+| Verdict | Confidence values are route labels, not trustworthy probabilities: the 0.60 and 0.80 bands are underconfident, the 1.00 band is exact (99/99), and the 0.00 band pools 8 correct absences with the 2 errors |
 | Unit tests | 52 passed (12 Deep, 19 Build, 21 Learn), plus the scaffold smoke test |
 | Determinism | results_deep.json identical across two runs (hash verified) |
 
@@ -565,14 +565,18 @@ plus the scaffold smoke test.
 No, not as probabilities, and the tables show why in
 three separate ways.
 
-1. Every non-zero band is underconfident. Fields scored
-   0.60 are right 4 of 4 times, fields scored 0.80 are
-   right 47 of 47 times, and fields scored 1.00 are right
-   99 of 99 times. Read as probabilities, 0.60 and 0.80
-   both understate the measured accuracy by a wide
-   margin, and the ECE of 0.1187 is entirely this
-   underconfidence: the gap between 0.9875 accuracy and
-   0.8688 mean confidence.
+1. The 0.60 and 0.80 bands are underconfident and the
+   1.00 band is exact. Fields scored 0.60 are right 4 of
+   4 times, fields scored 0.80 are right 47 of 47 times,
+   and fields scored 1.00 are right 99 of 99 times. Read
+   as probabilities, 0.60 and 0.80 both understate the
+   measured accuracy by a wide margin, while 1.00 matches
+   it. Of the ECE of 0.1187, 0.0500 comes from the 0.00
+   band (8 correct absences scored 0) and 0.0688 from the
+   underconfident 0.60 and 0.80 bands. Because no band
+   has accuracy below its confidence, the ECE also equals
+   the gap between 0.9875 accuracy and 0.8688 mean
+   confidence.
 2. The 0.00 band pools two opposite meanings. At field
    level, confidence 0.00 on due_date is 8 of 8 correct
    (receipts genuinely have no due date), while
@@ -729,7 +733,8 @@ and SPEC now state the target scope and the shipped scope side by side
 
 The Deep level tests one hypothesis with a written verdict: the stated
 confidence values behave as probabilities of correctness. Rejected:
-every non-zero band is underconfident and the 0.00 band mixes two
+the 0.60 and 0.80 bands are underconfident, the 1.00 band is exact,
+and the 0.00 band mixes two
 meanings. The Learn and Build levels have acceptance criteria rather
 than falsifiable hypotheses. Remaining gap: no pre-registered hypothesis
 with a falsification threshold. Needs no compute, only a written
