@@ -106,7 +106,7 @@ export default function App() {
   const setText = (id, t) => setEdits((e) => ({ ...e, [id]: t }));
   const reset = (id) => setEdits((e) => { const n = { ...e }; delete n[id]; return n; });
   return (
-    <div className="wrap">
+    <div className="wrap"><a className="skip" href="#top">Skip to content</a>
       <MenuBar />
       <div className="glow" aria-hidden="true" />
       <Hero />
@@ -123,7 +123,7 @@ export default function App() {
       <footer>
         Every number on this page is read at build time from <code>results/*.json</code> or computed in your browser by a port of the Python extractor that a build-time parity check holds to the committed results.
         <br />Documents are synthetic and every vendor name is invented. Code: Apache-2.0.
-      </footer>
+      <nav className="support" aria-label="Support this work"><a href="https://github.com/sponsors/JesunAhmadUshno">Sponsor this work</a><a href="https://github.com/sponsors/JesunAhmadUshno">Donate</a><a href="https://buymeacoffee.com/jesun">Buy Me a Coffee</a><a href="https://calendly.com/jesunahmadushno/30min">Work with me</a></nav></footer>
     </div>
   );
 }
@@ -131,7 +131,7 @@ export default function App() {
 function Hero() {
   const fs = build.field_summary, t = build.table, q = build.qa_summary;
   return (
-    <header className="card hero window" id="top" data-title="document-intelligence — README.md">
+    <header className="card hero window" id="top" data-title="document-intelligence - README.md">
       <div className="head">
         <p className="eyebrow">Learn · Build · Deep · rule-based document extraction</p>
         <span className="pill warn">● Synthetic text, no OCR</span>
@@ -174,7 +174,7 @@ function Extract({ sel, setSel, text, setText, reset, edited }) {
   const matches = FIELDS.filter((f) => fields[f].value === doc.ground_truth[f]).length;
   const taId = useId();
   return (
-    <section id="extract" className="card window reveal" data-title="extract.app — live in your browser">
+    <section id="extract" className="card window reveal" data-title="extract.app - live in your browser">
       <div className="head">
         <div>
           <p className="eyebrow">Live extractor playground</p>
@@ -252,7 +252,7 @@ function Fields() {
     ...ERRORS.filter((e) => e.field === pick).map((e) => ({ level: 'Build', id: e.doc_id, got: e.extracted, want: e.ground_truth })),
   ];
   return (
-    <section id="fields" className="card window reveal" data-title={`fields.csv — Learn ${learn.summary.documents} docs vs Build ${BUILD_DOCS.length} docs`}>
+    <section id="fields" className="card window reveal" data-title={`fields.csv - Learn ${learn.summary.documents} docs vs Build ${BUILD_DOCS.length} docs`}>
       <p className="eyebrow">Per-field accuracy · {RECORDED}</p>
       <h2>Three fields are perfect at both levels. <em>Date and total</em> each miss once.</h2>
       <p className="sub">
@@ -297,7 +297,7 @@ function Tables({ sel, setSel, records }) {
   const doc = BUILD_DOCS[j], got = records[j].line_items;
   const live = scoreTables(BUILD_DOCS, records);
   return (
-    <section id="tables" className="card window reveal" data-title="tables.view — line items">
+    <section id="tables" className="card window reveal" data-title="tables.view - line items">
       <div className="head">
         <div>
           <p className="eyebrow">Table extraction</p>
@@ -350,7 +350,7 @@ function QA({ records, edits, setText, reset }) {
   const b16 = ERRORS.find((e) => e.field === 'total')?.doc_id;
   const fixB16 = () => setText(b16, ALL_DOCS[b16].text.replace(/^Amount Due: .*$/m, `Amount Due: $${ALL_DOCS[b16].ground_truth.total}`));
   return (
-    <section id="qa" className="card window reveal" data-title={`qa.console — ${QUESTIONS.length} structured questions`}>
+    <section id="qa" className="card window reveal" data-title={`qa.console - ${QUESTIONS.length} structured questions`}>
       <div className="head">
         <div>
           <p className="eyebrow">Cross-document question answering</p>
@@ -397,7 +397,7 @@ function Calibration() {
   const zero = bandOf(0), bl = deep.baselines;
   const dueZero = deep.per_field.find((f) => f.field === 'due_date').by_band.find((b) => b.confidence === 0);
   return (
-    <section id="calibration" className="card window reveal" data-title="calibration.plot — reliability diagram">
+    <section id="calibration" className="card window reveal" data-title="calibration.plot - reliability diagram">
       <p className="eyebrow">Calibration audit · {RECORDED}</p>
       <h2>The 0.60 and 0.80 bands are <em>underconfident</em>, 1.00 is exact; the 0.00 band mixes two meanings.</h2>
       <p className="sub">
@@ -464,7 +464,7 @@ function Queue() {
   const q = useMemo(() => queueAtThreshold(deep.items, t), [t]);
   const isRecorded = deep.threshold_sweep.some((s) => s.threshold === t);
   return (
-    <section id="queue" className="card window reveal" data-title={`review.queue — ${deep.total_fields} recorded extractions`}>
+    <section id="queue" className="card window reveal" data-title={`review.queue - ${deep.total_fields} recorded extractions`}>
       <div className="head">
         <div>
           <p className="eyebrow">Review-queue threshold explorer</p>
@@ -501,7 +501,7 @@ function Stress() {
   }), []);
   const base = stress.baseline;
   return (
-    <section id="stress" className="card window reveal" data-title="stress.run — four format shifts">
+    <section id="stress" className="card window reveal" data-title="stress.run - four format shifts">
       <p className="eyebrow">Perturbation stress set · new experiment, reported separately</p>
       <h2>The rules are <em>format-bound</em>: small surface changes erase most of the accuracy.</h2>
       <p className="sub">
@@ -534,7 +534,7 @@ function Limits() {
     ['Run location', `All levels ran on the ${RECORDED_WHERE} CPU, not the assigned fleet node.`],
   ];
   return (
-    <section id="limits" className="card window reveal" data-title="limits.md — threats to validity">
+    <section id="limits" className="card window reveal" data-title="limits.md - threats to validity">
       <p className="eyebrow">Limits and threats to validity</p>
       <h2>What this project does <em>not</em> show.</h2>
       <div className="grid2" style={{ marginTop: 16 }}>
@@ -555,7 +555,7 @@ function Reproduce() {
     ['CHANGELOG.md', 'Changelog', 'What changed and when'],
   ];
   return (
-    <section id="reproduce" className="card window reveal" data-title="Terminal — reproduce">
+    <section id="reproduce" className="card window reveal" data-title="Terminal - reproduce">
       <p className="eyebrow">Reproduce it</p>
       <h2>Standard-library Python, deterministic output, <em>git stays clean</em>.</h2>
       <ol className="steps" style={{ marginTop: 16 }}>
