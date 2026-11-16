@@ -38,7 +38,8 @@ built work.
   review queue flagging confidence below 0.60 flags 10 of 160
   fields and captures both errors (capture rate 1.0000).
 - Verdict: the confidence values are route labels, not
-  probabilities. Every non-zero band is underconfident, and the
+  probabilities. The 0.60 and 0.80 bands are underconfident, the
+  1.00 band is exact (99 of 99), and the
   0.00 band pools correct absences with real errors. As a ranking
   for human review, the labels work. As probabilities, they do
   not, and the project says so in its own README.
