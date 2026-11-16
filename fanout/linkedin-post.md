@@ -23,8 +23,9 @@ not buried: a total written in words was missed, and the total
 spend answer came out 11758.50 against a gold of 12108.50.
 
 Deep: I calibrated those confidence values over the same 160
-fields. Expected calibration error 0.1187. Every non-zero band
-is underconfident: fields scored 0.80 were right 47 of 47 times.
+fields. Expected calibration error 0.1187. The 0.60 and 0.80
+bands are underconfident (fields scored 0.80 were right 47 of 47
+times); the 1.00 band is exact, 99 of 99.
 The 0.00 band pools 8 correct absences with the 2 real errors.
 The scores are route labels, not probabilities. But as a
 ranking they work: flagging everything below 0.60 sends 10 of

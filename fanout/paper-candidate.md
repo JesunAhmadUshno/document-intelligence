@@ -17,9 +17,10 @@ four stated values gave band accuracies of 0.8000 at 0.00 (8 of
 10), 1.0000 at 0.60 (4 of 4), 1.0000 at 0.80 (47 of 47), and
 1.0000 at 1.00 (99 of 99), an expected calibration error of
 0.1187 by the weighted absolute gap formula, and a Brier score
-of 0.0658. The error is entirely underconfidence in the non-zero
-bands, plus a structural confound in the 0.00 band, which pools
-correctly detected absences with real extraction errors. A
+of 0.0658. Of that ECE, 0.0688 is underconfidence in the 0.60 and
+0.80 bands (the 1.00 band is exact) and 0.0500 comes from the 0.00
+band, a structural confound that pools correctly detected absences
+with real extraction errors. A
 review queue flagging confidence below 0.60 captured both field
 errors at a burden of 10 of 160 fields.
 

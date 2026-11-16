@@ -80,7 +80,7 @@ Against document AI services and OCR pipelines: this project aims to differ in t
 
 #### Measured value at v1.0.1 (stated plainly, no novelty claimed)
 
-The measured contribution is a small, fully reproducible calibration audit of route-label confidence in a rule-based extractor: on 160 synthetic fields, the four stated confidence values give ECE 0.1187 and Brier 0.0658 against an in-sample band-accuracy map's Brier 0.0100, every non-zero band is underconfident, and the 0.00 band pools correct absences with real misses. A deterministic stress set shows the rules are format-bound. None of this is novel against document-extraction prior art (for example the FUNSD, CORD, SROIE and DocVQA benchmarks, or layout-aware models such as LayoutLM and Donut); no comparison against them was run, because this project runs no OCR and no learned model. The value is a clean, honest worked example, not a new method.
+The measured contribution is a small, fully reproducible calibration audit of route-label confidence in a rule-based extractor: on 160 synthetic fields, the four stated confidence values give ECE 0.1187 and Brier 0.0658 against an in-sample band-accuracy map's Brier 0.0100, the 0.60 and 0.80 bands are underconfident while the 1.00 band is exact (99/99), and the 0.00 band pools correct absences with real misses. A deterministic stress set shows the rules are format-bound. None of this is novel against document-extraction prior art (for example the FUNSD, CORD, SROIE and DocVQA benchmarks, or layout-aware models such as LayoutLM and Donut); no comparison against them was run, because this project runs no OCR and no learned model. The value is a clean, honest worked example, not a new method.
 
 #### Honest size
 
